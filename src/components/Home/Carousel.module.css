@@ -1,0 +1,9 @@
+/* custom-carousel.css */
+
+.customCarousel {
+    height: 50% !important; /* Use !important to ensure the style takes precedence */
+}
+
+.customCarouselImage {
+    height: 100% !important; /* Use !important to ensure the style takes precedence */
+}
