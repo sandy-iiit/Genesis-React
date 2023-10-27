@@ -16,6 +16,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import NewLogoImage from '../assets/images/Logo.ico';
 import {Link} from "@mui/material";
 import classes from './navbar.module.css'
+import {NavLink} from "react-router-dom";
 const pages = [
     ['Home','/'],
     ['About Us','/about' ],
@@ -94,7 +95,7 @@ function NavBar() {
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },gap:'25px',marginLeft:'25px' }}>
                         {pages.map((page) => (
-                            <Link  to={page[1]} key={page[0]} className={classes.customLink}>
+                            <NavLink  to={page[1]} key={page[0]}  className={classes.customLink} >
                               <Button
                                 key={page.title}
                                 onClick={handleCloseNavMenu}
@@ -110,7 +111,7 @@ function NavBar() {
                             >
                                 {page[0]}
                             </Button>
-                            </Link>
+                            </NavLink>
                         ))}
                     </Box>
 
