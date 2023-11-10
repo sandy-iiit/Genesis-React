@@ -25,6 +25,7 @@ const pages = [
     ['Policies','/policies'],
 ]
 const settings = ['Profile', 'Dashboard', 'Logout'];
+const settingsPaths = ['/profile', '/dashboard', '/logout']; // Add respective paths here
 
 function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -138,9 +139,13 @@ function NavBar() {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
+                            {settings.map((setting, index) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center">
+                                        <NavLink to={settingsPaths[index]} className={classes.customLink}>
+                                            {setting}
+                                        </NavLink>
+                                    </Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
