@@ -17,6 +17,8 @@ import NewLogoImage from '../assets/images/Logo.ico';
 import {Link} from "@mui/material";
 import classes from './navbar.module.css'
 import {NavLink} from "react-router-dom";
+import { useSelector } from 'react-redux';
+
 const pages = [
     ['Home','/'],
     ['About Us','/about' ],

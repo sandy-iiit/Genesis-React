@@ -1,5 +1,9 @@
+import {useSelector} from "react-redux";
 
 const offers=(props)=>{
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const user=useSelector((state)=>state.auth)
+    console.log(user)
     return(
         <>
             <div className="fullwidth-block" data-bg-color="#f1f1f1">

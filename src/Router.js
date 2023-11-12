@@ -1,8 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home'
 import Offers from "./components/Home/Offers";
-import {Details} from "@mui/icons-material";
 import Profile from "./pages/Profile";
+import Login from "./pages/Login";
 const router=createBrowserRouter([
     {
         path:'/',
@@ -14,11 +14,11 @@ const router=createBrowserRouter([
     {
         path:'/profile',
         element:<Profile/>,
+    },
+    {
+    path:'/login',
+    element:<Login/>
     }
-    // {
-    // path:'/about-us',
-    //
-    // }
 ])
 
 
