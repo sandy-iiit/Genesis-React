@@ -16,9 +16,21 @@ const Login = () => {
     async function onSubmit(values, actions) {
         console.log(values);
         try {
-            const res = await axiosConfiguration.post("/login", values);
+            const res = isSignIn?await axiosConfiguration.post("/login", values)
+            :await axiosConfiguration.post("/signup", values);
             console.log(res);
-            dispatch(authActions.login(res.data.name))
+            const authUser={
+                name:res.data.name,
+                email:res.data.email,
+                password:"",
+                age:res.data.age,
+                sex:res.data.sex,
+                address:res.data.address,
+                phone:res.data.phone,
+                id:res.data._id,
+                type:isSignIn?values.type:"User"
+            }
+            dispatch(authActions.login(authUser))
             // Navigate only if the request is successful
             navigate("/");
         } catch (error) {
@@ -28,15 +40,21 @@ const Login = () => {
     }
 
 
-    const {values,errors,touched,handleBlur,handleChange,handleSubmit}=useFormik({
-        initialValues:{
-            type:"Admin",
-            email:"",
-            name:"",
-            password:""
-        },
-        onSubmit
-    })
+        const {values,errors,touched,handleBlur,handleChange,handleSubmit,getFieldProps}=useFormik({
+            initialValues:{
+                type:"",
+                email:"",
+                name:"",
+                password:"",
+                address:"",
+                phone:"",
+                age:"",
+                sex:"",
+            },
+            onSubmit
+        })
+
+
     const toggleForm = () => {
         setIsSignIn(!isSignIn);
     };
@@ -48,8 +66,21 @@ const Login = () => {
     const renderForm = isSignIn ? (
         <form onSubmit={handleSubmit} className={styles["sign-in-form"]}>
             <h2 className={styles.title}>Sign in</h2>
+            <select
+                id="type"
+                {...getFieldProps('type')}
+            >
+                <option value="" disabled>
+                    Select a role
+                </option>
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+                <option value="Agent">Agent</option>
+            </select>
             <div className={styles["input-field"]}>
                 <i className={`fas fa-user ${styles.icon}`}></i>
+
+
                 <input
                     type="email"
                     placeholder="Email"
@@ -77,12 +108,14 @@ const Login = () => {
             />
         </form>
     ) : (
-        <form  className={styles["sign-up-form"]}>
+        <form onSubmit={handleSubmit}  className={styles["sign-up-form"]}>
             <h2 className={styles.title}>Sign up</h2>
             <div className={styles["input-field"]}>
                 <i className={`fas fa-user ${styles.icon}`}></i>
                 <input
                     type="text"
+                    id={"name"}
+                    onChange={handleChange}
 
                     placeholder="Username"
                     className={styles.input}
@@ -92,7 +125,8 @@ const Login = () => {
                 <i className={`fas fa-envelope ${styles.icon}`}></i>
                 <input
                     type="email"
-
+                    id={"email"}
+                    onChange={handleChange}
                     placeholder="Email"
                     className={styles.input}
                 />
@@ -100,9 +134,42 @@ const Login = () => {
             <div className={styles["input-field"]}>
                 <i className={`fas fa-lock ${styles.icon}`}></i>
                 <input
-                    type="password"
-
-                    placeholder="Password"
+                    type="number"
+                    min="5"
+                    max="70"
+                    onChange={handleChange}
+                    id={"age"}
+                    placeholder="Age"
+                    className={styles.input}
+                />
+            </div>
+            <div className={styles["input-field"]}>
+                <i className={`fas fa-lock ${styles.icon}`}></i>
+                <input
+                    type="text"
+                    id={"sex"}
+                    onChange={handleChange}
+                    placeholder="Sex"
+                    className={styles.input}
+                />
+            </div>
+            <div className={styles["input-field"]}>
+                <i className={`fas fa-lock ${styles.icon}`}></i>
+                <input
+                    type="text"
+                    id={"address"}
+                    onChange={handleChange}
+                    placeholder="Address"
+                    className={styles.input}
+                />
+            </div>
+            <div className={styles["input-field"]}>
+                <i className={`fas fa-lock ${styles.icon}`}></i>
+                <input
+                    type="text"
+                    id={"phone"}
+                    onChange={handleChange}
+                    placeholder="Phone"
                     className={styles.input}
                 />
             </div>
@@ -110,13 +177,16 @@ const Login = () => {
                 <i className={`fas fa-lock ${styles.icon}`}></i>
                 <input
                     type="password"
-
-                    placeholder="Confirm Password"
+                    id={"password"}
+                    onChange={handleChange}
+                    placeholder="Password"
                     className={styles.input}
                 />
             </div>
+
             <input
                 type="submit"
+                onChange={handleChange}
                 className={styles.btn}
                 value="Sign up"
 

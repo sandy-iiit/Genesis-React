@@ -1,7 +1,9 @@
 import classes from './Details.module.css';
 import {useEffect} from "react";
+import {useSelector} from "react-redux";
 
 function Details(){
+    const user=useSelector((state)=>state.auth)
     useEffect(() => {
         document.body.classList.add(classes.specialPageBody);
 
@@ -19,26 +21,26 @@ function Details(){
                     <p style={{textAlign:"center"}}></p>
 
                         <div className={classes.detailItem}>
-                            <p className={classes.label}>Name</p>  <input className={classes.input} name="name"
+                            <p className={classes.label}>Name</p>  <input value={user.name} className={classes.input} name="name"
                                                                   ></input>
                         </div>
                     <div className={classes.detailItem}>
-                            <p className={classes.label}>Email</p>   <input className={classes.input} name="email"
+                            <p className={classes.label}>Email</p>   <input value={user.email} className={classes.input} name="email"
                                                                     ></input>
                         </div>
                     <div className={classes.detailItem}>
-                            <p className={classes.label}>Age</p>   <input className={classes.input} type="number" name="age"
+                            <p className={classes.label}>Age</p>   <input value={user.age} className={classes.input} type="number" name="age"
                                                                   ></input>
                         </div>
                     <div className={classes.detailItem}>
-                            <p className={classes.label}>Sex</p>  <input className={classes.input} value="" disabled/>
+                            <p className={classes.label}>Sex</p>  <input className={classes.input} value={user.sex} disabled/>
                         </div>
                     <div className={classes.detailItem}>
-                            <p className={classes.label}>Address</p>   <input className={`${classes.input} ${classes.address}`} name="address"
+                            <p className={classes.label}>Address</p>   <input value={user.address} className={`${classes.input} ${classes.address}`} name="address"
                                                                       ></input>
                         </div>
                     <div className={classes.detailItem}>
-                            <p className={classes.label}>Phone</p>   <input className={classes.input} type="number" name="phone"
+                            <p className={classes.label}>Phone</p>   <input value={user.phone} className={classes.input} type="number" name="phone"
                                                                     ></input>
                         </div>
                     <div className={`${classes.detailItem} ${classes.buttons}`}>

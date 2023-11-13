@@ -30,6 +30,7 @@ const settings = ['Profile', 'Dashboard', 'Logout'];
 const settingsPaths = ['/profile', '/dashboard', '/logout']; // Add respective paths here
 
 function NavBar() {
+    const isLoggedIn=useSelector((state)=>state.auth.isLoggedIn)
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -119,7 +120,7 @@ function NavBar() {
                     </Box>
 
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    {isLoggedIn ?  <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -152,6 +153,8 @@ function NavBar() {
                             ))}
                         </Menu>
                     </Box>
+                        : <NavLink to={"/login"}>Login/Signup</NavLink>
+                    }
                 </Toolbar>
             </Container>
         </AppBar>
