@@ -16,8 +16,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import NewLogoImage from '../assets/images/Logo.ico';
 import {Link} from "@mui/material";
 import classes from './navbar.module.css'
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 import { useSelector } from 'react-redux';
+import axiosConfiguration from "../config/axiosConfiguration";
 
 const pages = [
     ['Home','/'],
@@ -26,13 +27,14 @@ const pages = [
     ['Services','/services'],
     ['Policies','/policies'],
 ]
-const settings = ['Profile', 'Dashboard', 'Logout'];
-const settingsPaths = ['/profile', '/dashboard', '/logout']; // Add respective paths here
+const settings = ['Profile', 'Dashboard'];
+const settingsPaths = ['/profile', '/dashboard']; // Add respective paths here
 
 function NavBar() {
     const isLoggedIn=useSelector((state)=>state.auth.isLoggedIn)
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const navigate=useNavigate();
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -48,6 +50,14 @@ function NavBar() {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
+
+    async function handleClick() {
+        await axiosConfiguration.post("/logout")
+        navigate('/')
+        window.location.reload();
+
+
+    }
 
     return (
         <AppBar position="static"  sx={{ backgroundColor: '#3E54AE',height:'85px'}}>
@@ -148,9 +158,19 @@ function NavBar() {
                                         <NavLink to={settingsPaths[index]} className={classes.customLink}>
                                             {setting}
                                         </NavLink>
+
                                     </Typography>
                                 </MenuItem>
                             ))}
+                            <MenuItem onClick={handleCloseUserMenu}>
+                                <Typography textAlign="center">
+                                    <button onClick={handleClick}  className={classes.customLink}>
+                                        Logout
+                                    </button>
+
+                                </Typography>
+                            </MenuItem>
+
                         </Menu>
                     </Box>
                         : <NavLink to={"/login"}>Login/Signup</NavLink>

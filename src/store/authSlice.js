@@ -1,5 +1,4 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {useNavigation} from "react-router-dom";
 
 const authUser={
    isLoggedIn:false,
@@ -18,6 +17,7 @@ const authSlice=createSlice({
     initialState:authUser,
     reducers:{
         login(state,action){
+            
             state.isLoggedIn=true
             state.name=action.payload.name
             state.email=action.payload.email
@@ -28,8 +28,8 @@ const authSlice=createSlice({
             state.id=action.payload.id
             state.type=action.payload.type
 
+        },
 
-        }
     }
 
 })
