@@ -1,0 +1,132 @@
+.PolicyCard {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .PolicyCard div video {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .disclaimer {
+    background-color: #3e54ac82;
+    margin: 14px;
+    border-radius: 25px;
+    height: fit-content;
+    padding: 10px;
+  }
+  
+  .disclaimer p {
+    font-size: large;
+    font-weight: 450;
+    color: rgb(255, 255, 255);
+  }
+  
+  .disclaimer h2 {
+    color: #3e54ac;
+    letter-spacing: 1.2px;
+    margin: 5px;
+  }
+  
+  .explore {
+    background-color: #3e54ac;
+    color: white;
+    border-radius: 25px;
+    border-style: none;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 2px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .PolicyCard div img {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .PolicyCard .disclaimer {
+    width: 100%;
+  }
+  
+  .PolicyCard div video {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+  }
+  
+  /* Media queries for tablet screens */
+  @media screen and (max-width: 1024px) {
+    .PolicyCard {
+      flex-direction: column;
+      padding: 20px;
+    }
+    .PolicyCard div video {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    .disclaimer {
+      max-width: none;
+    }
+    .explore {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+    .PolicyCard {
+      display: flex;
+      flex-direction: column;
+    }
+    .PolicyCard div {
+      justify-content: center;
+      align-items: center;
+      object-fit: cover;
+    }
+    .disclaimer {
+      order: 2;
+    }
+    .borde {
+      order: 1;
+    }
+    .PolicyCard div {
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  
+  /* Media queries for mobile screens */
+  @media screen and (max-width: 480px) {
+    .disclaimer h2 {
+      font-size: 24px;
+    }
+    .disclaimer p {
+      font-size: 16px;
+    }
+    .explore {
+      font-size: 14px;
+      padding: 5px 10px;
+    }
+    .PolicyCard {
+      display: flex;
+      flex-direction: column;
+    }
+    .PolicyCard div {
+      justify-content: center;
+      align-items: center;
+      object-fit: cover;
+    }
+    .disclaimer {
+      order: 2;
+    }
+    .borde {
+      order: 1;
+    }
+  }
+  
