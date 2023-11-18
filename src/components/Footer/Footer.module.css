@@ -1,0 +1,56 @@
+/* Footer.module.css */
+.siteFooter {
+    border-top: 1px solid #ccc;
+    padding-top: 50px;
+}
+
+.widgetArea {
+    margin-bottom: 50px;
+}
+
+.widgetArea .widget {
+    font-size: 14px;
+    font-size: 0.875em;
+    margin-bottom: 30px;
+}
+
+.widgetArea .widget-title {
+    font-size: 20px;
+    font-size: 1.25rem;
+}
+
+.widgetArea a {
+    color: #768089;
+    text-decoration: none;
+}
+
+.widgetArea ul {
+    list-style-type: none;
+}
+
+.bottomFooter {
+    background-color: #4a4c4e;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 14px;
+    font-size: 0.875em;
+}
+
+.footerNavigation {
+    margin-bottom: 30px;
+}
+
+.footerNavigation a {
+    color: white;
+    padding: 0 10px;
+    border-right: 1px solid white;
+    line-height: 20px;
+}
+
+.footerNavigation a:last-child {
+    border-right: none;
+}
+
+.colophon {
+    color: #898b8d;
+}

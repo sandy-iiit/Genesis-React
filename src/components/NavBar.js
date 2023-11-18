@@ -35,7 +35,6 @@ function NavBar() {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate=useNavigate();
-
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
@@ -164,7 +163,7 @@ function NavBar() {
                             ))}
                             <MenuItem onClick={handleCloseUserMenu}>
                                 <Typography textAlign="center">
-                                    <button onClick={handleClick}  className={classes.customLink}>
+                                    <button onClick={handleClick}  className={classes.login}>
                                         Logout
                                     </button>
 
@@ -173,7 +172,9 @@ function NavBar() {
 
                         </Menu>
                     </Box>
-                        : <NavLink to={"/login"}>Login/Signup</NavLink>
+                        : <Typography textAlign="center">
+                            <NavLink className={classes.login} to={"/login"}>Login/Signup</NavLink>
+                        </Typography>
                     }
                 </Toolbar>
             </Container>

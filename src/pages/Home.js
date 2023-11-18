@@ -9,15 +9,19 @@ import newpic6 from '../assets/images/home-offers/images_pexels_com-pexels-photo
 import newpic7 from '../assets/images/home-offers/images_pexels_com-pexels-photo-7688374.png';
 import newpic8 from '../assets/images/home-offers/offer-wide@2x.jpg';
 import Offers from "../components/Home/Offers";
+import {useEffect} from "react";
+import Footer from "../components/Footer/Footer";
 
 
 function Home(){
     const images=[newpic5,newpic6,newpic8,newpic2,newpic3,newpic4]
+
  return (
      <>
      <NavBar/>
          <Carousel img1={newpic}/>
          <Offers images={images}/>
+         <Footer/>
      </>
  )
 

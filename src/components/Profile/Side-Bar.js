@@ -1,5 +1,6 @@
 import classes from './Details.module.css'
 import {useSelector} from "react-redux";
+import {NavLink} from "react-router-dom";
 function SideBar(){
     const type=useSelector((state)=>state.auth.type)
     return <>
@@ -10,14 +11,19 @@ function SideBar(){
                 </a>
             </div>
             {(type==="User") && <div className={classes.sideItem}>
-                <a href="/my-details">
+                <NavLink to={"/askQuery"}>
                     <button className={classes.det}>Ask Query</button>
-                </a>
+                </NavLink>
             </div>}
             {(type==="User") && <div className={classes.sideItem}>
-                <a href="/my-details">
+                <NavLink to={"/viewQueries"}>
+                    <button className={classes.det}>My Queries</button>
+                </NavLink>
+            </div>}
+            {(type==="User") && <div className={classes.sideItem}>
+                <NavLink to={"/dropReview"}>
                     <button className={classes.det}>Write Review</button>
-                </a>
+                </NavLink>
             </div>}
             {(type==="User") && <div className={classes.sideItem}>
                 <a href="/my-details">
@@ -26,25 +32,25 @@ function SideBar(){
             </div>}
 
             {(type==="Admin" || type==="Agent") && <div className={classes.sideItem}>
-                <a href="/answer-queries">
+                <NavLink to={"/answerQueries"}>
                     <button className={classes.det}>Answer Queries</button>
-                </a>
+                </NavLink>
             </div> }
             {(type==="Admin" || type==="Agent") &&<div className={classes.sideItem}>
-                <a href="/answered-queries">
+                <NavLink to={"/answeredQueries"}>
                     <button className={classes.det}>Your Answers</button>
-                </a>
+                </NavLink>
             </div>
             }
             {(type==="Admin" || type==="Agent") && <div className={classes.sideItem}>
-                <a href="/reviews">
+                <NavLink to={"/viewReviews"}>
                     <button className={classes.det}>View Reviews</button>
-                </a>
+                </NavLink>
             </div>}
             {(type==="Admin" || type==="Agent") &&<div className={classes.sideItem}>
-                <a href="/agentboard">
+                <NavLink to="/dashBoard">
                     <button className={classes.det}> --> More</button>
-                </a>
+                </NavLink>
             </div>}
 
 

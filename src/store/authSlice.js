@@ -27,8 +27,12 @@ const authSlice=createSlice({
             state.phone=action.payload.phone
             state.id=action.payload.id
             state.type=action.payload.type
+            console.log(state.type)
 
         },
+        logout(state){
+            return authUser
+        }
 
     }
 

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Login.module.css";
-import logoimage from "../assets/images/log.svg";
-import registerlogo from "../assets/images/register.svg";
-import axiosConfiguration from "../config/axiosConfiguration";
+import logoimage from "../../assets/images/log.svg";
+import registerlogo from "../../assets/images/register.svg";
+import axiosConfiguration from "../../config/axiosConfiguration";
 import {useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {authActions} from "../store/authSlice";
+import {authActions} from "../../store/authSlice";
 // import companylogo from "../../assets/images/okoklogo-transformed.ico"
 const Login = () => {
 
@@ -16,27 +16,34 @@ const Login = () => {
     async function onSubmit(values, actions) {
         console.log(values);
         try {
-            const res = isSignIn?await axiosConfiguration.post("/login", values)
-            :await axiosConfiguration.post("/signup", values);
-            console.log(res);
-            const authUser={
-                name:res.data.name,
-                email:res.data.email,
-                password:"",
-                age:res.data.age,
-                sex:res.data.sex,
-                address:res.data.address,
-                phone:res.data.phone,
-                id:res.data._id,
-                type:isSignIn?values.type:"User"
+            const res = isSignIn ? await axiosConfiguration.post("/login", values)
+                : await axiosConfiguration.post("/signup", values);
+            console.log(res.data);
+            if (res.data.msg) {
+                alert(res.data.msg)
+                // navigate('/')
+            } else {
+
+                const authUser = {
+                    name: res.data.name,
+                    email: res.data.email,
+                    password: "",
+                    age: res.data.age,
+                    sex: res.data.sex,
+                    address: res.data.address,
+                    phone: res.data.phone,
+                    id: res.data._id,
+                    type: isSignIn ? values.type : res.data.type
+                }
+                dispatch(authActions.login(authUser))
+                // Navigate only if the request is successful
+                navigate("/");
             }
-            dispatch(authActions.login(authUser))
-            // Navigate only if the request is successful
-            navigate("/");
         } catch (error) {
             console.error('Error submitting form:', error);
             // Handle error, show error message, etc.
         }
+
     }
 
 
@@ -200,26 +207,26 @@ const Login = () => {
             <div className={styles["forms-container"]}>
                 <div className={`${styles["signin-signup"]} ${containerClass}`}>
                     {renderForm}
-                    <p className={styles["social-text"]}>
-                        Or Sign {isSignIn ? "in" : "up"} with social platforms
-                    </p>
-                    <div className={styles["social-media"]}>
-                        <a href="#" className={`${styles["social-icon"]} ${styles.facebook}`}>
-                            <i className="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" className={`${styles["social-icon"]} ${styles.twitter}`}>
-                            <i className="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" className={`${styles["social-icon"]} ${styles.google}`}>
-                            <i className="fab fa-google"></i>
-                        </a>
-                        <a
-                            href="#"
-                            className={`${styles["social-icon"]} ${styles.linkedin}`}
-                        >
-                            <i className="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
+                    {/*<p className={styles["social-text"]}>*/}
+                    {/*    Or Sign {isSignIn ? "in" : "up"} with social platforms*/}
+                    {/*</p>*/}
+                    {/*<div className={styles["social-media"]}>*/}
+                    {/*    <a href="#" className={`${styles["social-icon"]} ${styles.facebook}`}>*/}
+                    {/*        <i className="fab fa-facebook-f"></i>*/}
+                    {/*    </a>*/}
+                    {/*    <a href="#" className={`${styles["social-icon"]} ${styles.twitter}`}>*/}
+                    {/*        <i className="fab fa-twitter"></i>*/}
+                    {/*    </a>*/}
+                    {/*    <a href="#" className={`${styles["social-icon"]} ${styles.google}`}>*/}
+                    {/*        <i className="fab fa-google"></i>*/}
+                    {/*    </a>*/}
+                    {/*    <a*/}
+                    {/*        href="#"*/}
+                    {/*        className={`${styles["social-icon"]} ${styles.linkedin}`}*/}
+                    {/*    >*/}
+                    {/*        <i className="fab fa-linkedin-in"></i>*/}
+                    {/*    </a>*/}
+                    {/*</div>*/}
                 </div>
             </div>
 
@@ -229,8 +236,7 @@ const Login = () => {
                     <div className={styles["content"]}>
                         <h3>New here ?</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                            Debitis, ex ratione. Aliquid!
+                           Sign up to our website to explore the various range of insurances that suit your needs.
                         </p>
                         <button
                             className={`${styles.btn} ${styles.transparent}`}
@@ -246,8 +252,7 @@ const Login = () => {
                     <div className={styles["content"]}>
                         <h3>One of us ?</h3>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                            laboriosam ad deleniti.
+                            Sign In and enjoy our insurance services.
                         </p>
                         <button
                             className={`${styles.btn} ${styles.transparent}`}

@@ -13,7 +13,7 @@ function App() {
   const usr=useSelector((state)=>state.auth)
   async function func(){
     const res = await axiosConfiguration.get("/check")
-    console.log(res);
+    console.log(res.data);
     if(!res.data.message) {
       const authUser = {
         name: res.data.name,
@@ -24,7 +24,7 @@ function App() {
         address: res.data.address,
         phone: res.data.phone,
         id: res.data._id,
-        type: "User"
+        type: res.data.type
       }
       dispatch(authActions.login(authUser))
     }
