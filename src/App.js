@@ -26,6 +26,7 @@ function App() {
         id: res.data._id,
         type: res.data.type
       }
+      console.log(res.data.type)
       dispatch(authActions.login(authUser))
     }
   }

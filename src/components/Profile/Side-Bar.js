@@ -26,9 +26,9 @@ function SideBar(){
                 </NavLink>
             </div>}
             {(type==="User") && <div className={classes.sideItem}>
-                <a href="/my-details">
-                    <button className={classes.det}>Go To DashBoard</button>
-                </a>
+                <NavLink to={"/userApplications"}>
+                    <button className={classes.det}>My Applications</button>
+                </NavLink>
             </div>}
 
             {(type==="Admin" || type==="Agent") && <div className={classes.sideItem}>

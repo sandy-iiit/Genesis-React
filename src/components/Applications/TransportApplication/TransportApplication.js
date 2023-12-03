@@ -2,76 +2,11 @@ import classes from "./TransportApplication.module.css"
 import {useFormik} from "formik";
 import axiosConfiguration from "../../../config/axiosConfiguration";
 import axios from "axios";
+import {useSelector} from "react-redux";
 function TransportApplication(){
 
-    // async function onSubmit(values, actions) {
-    //     // console.log(values)
-    //     // console.log("Entered onsubmit")
-    //     // await axiosConfiguration.post("/transport-form", values)
-    //     // console.log('exited')
-    //     // // console.log(res)
-    //     try {
-    //         const formData = new FormData();
-    //
-    //         // Append form fields
-    //         Object.keys(values).forEach((key) => {
-    //             formData.append(key, values[key]);
-    //         });
-    //
-    //         // Append files
-    //         formData.append('aadhar', values.aadhar);
-    //         formData.append('c_book', values.c_book);
-    //         formData.append('nomineeAadhar', values.nomineeAadhar);
-    //         formData.append('nomineeAddressProof', values.nomineeAddressProof);
-    //
-    //         console.log("Entered onSubmit");
-    //         const res = await axios.post("http://localhost:4000/transport-form", formData, {
-    //             headers: {
-    //                 'Content-Type': 'multipart/form-data',
-    //             },
-    //         });
-    //
-    //         console.log(res);
-    //     } catch (error) {
-    //         console.error('Error submitting form:', error);
-    //     }
-    // }
-    //
-    //
-    //
-    // const {values,errors,touched,handleBlur,handleChange,handleSubmit,getFieldProps}=useFormik({
-    //     initialValues:{
-    //         firstName: "",
-    //         lastName:"",
-    //         age: "",
-    //         regNum:"",
-    //         sex:"",
-    //         aadhar: "",
-    //         c_book:"",
-    //         nomineeAadhar:"",
-    //         nomineeAddressProof:"",
-    //         vehicleCompany:"",
-    //         model:"",
-    //         yearOfMfg:"",
-    //         vehicleType:"",
-    //         engine:"",
-    //         chassis:"",
-    //         nominee:"",
-    //         nomineeAge:"",
-    //         nomineeRelation:"",
-    //         policyId:"",
-    //         policyName:"",
-    //         policyType:"",
-    //         policyTerm:"",
-    //         amount:"",
-    //         payType:"",
-    //         applier:"",
-    //         verificationStatus:'',
-    //         verificationDate:'',
-    //     },
-    //     onSubmit
-    // })
-
+    const userId=useSelector((state)=>state.auth.id)
+    console.log(userId)
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -95,6 +30,8 @@ function TransportApplication(){
         formData.append('policyName', e.target.elements.policyName.value);
         formData.append('amount', e.target.elements.amount.value);
         formData.append('policyTerm', e.target.elements.policyTerm.value);
+        formData.append('policyType', "TRANSPORT");
+        formData.append('applier', userId);
         // ... append other form fields
 
         // Append files to the FormData object

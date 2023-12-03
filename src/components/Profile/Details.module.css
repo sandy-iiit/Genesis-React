@@ -92,13 +92,14 @@ a{
 }
 
 .input{
-    width: 35vh;
+    width: 32vh;
     height: 7vh;
     border-radius: 30px;
     border-style: none;
     font-size: 18px;
     color: #3E54AC;
     padding-left: 10px;
+    margin-left: 3vh;
 }
 
 .label{
@@ -113,22 +114,29 @@ a{
 }
 
 .btn1{
-    width: 11vh;
+    width: 10vh;
     height:7vh ;
     border-radius: 30px;
     border-style: none;
     background-color: white;
     color: #3E54AC;
+    margin-right: 3px;
 
 }
 .btn2{
-    width: 30vh;
+    width: 29vh;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
     height: 7vh;
     border-radius: 30px;
     border-style: none;
     background-color: white;
     color: #3E54AC;
 
+}
+.password{
+    margin-top: 7px;
 }
 .btn1:hover,.btn2:hover{
     cursor: pointer;

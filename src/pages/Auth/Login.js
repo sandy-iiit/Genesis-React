@@ -198,6 +198,7 @@ const Login = () => {
                 value="Sign up"
 
             />
+
         </form>
 
     );
@@ -244,6 +245,13 @@ const Login = () => {
                         >
                             Sign up
                         </button>
+                        <button
+                            className={`${styles.btn} ${styles.transparent}`}
+                            onClick={()=>{navigate("/agentSignUp")}}
+                        >
+                             Wanna Join Us
+                        </button>
+
                     </div>
                     <img src={logoimage} className={styles.image} alt="" />
                 </div>
