@@ -1,0 +1,45 @@
+.cardHeader {
+    background-color: #2f3e7a;  
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+     width: fit-content;
+    text-align: center;
+    position: relative;
+    top: 25px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .cardHeader div h1 {
+    margin: 0;
+    font-size: 24px;  
+    text-align: center;
+    z-index: 1;
+     
+  }
+.chartContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.chart {
+    width: 30%;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+}
+
+.barChart canvas {
+    width: 100% !important; /* Adjust width of the bars */
+}
+
+.pieChart canvas,
+.lineChart canvas {
+    width: 100% !important;
+}

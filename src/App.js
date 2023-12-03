@@ -1,30 +1,43 @@
 import './App.css';
-import AgentDashboard from './components/AgentDashboard/AgentDashboard';
-import Policies from './components/Policies/Policies';
-import LoginPage from './pages/Auth';
-// import router from "./Router";
-import Home from "./pages/Home";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Home />,
-  },
-  {
-    path: 'auth',
-    element: <LoginPage />
-  },
-  {
-    path: 'agentboard',
-    element: <AgentDashboard />
-  },
-  {
-    path: 'policies',
-    element : <Policies/>
-  }
-])
+// import router from "./Router";
+import {RouterProvider} from "react-router-dom";
+import router from "./Router";
+import {useEffect} from "react";
+import axiosConfiguration from "./config/axiosConfiguration";
+import {authActions} from "./store/authSlice";
+import {useDispatch, useSelector} from "react-redux";
+
 function App() {
+  const dispatch=useDispatch();
+  const usr=useSelector((state)=>state.auth)
+  async function func(){
+    const res = await axiosConfiguration.get("/check")
+    console.log(res.data);
+    if(!res.data.message) {
+      const authUser = {
+        name: res.data.name,
+        email: res.data.email,
+        password: "",
+        age: res.data.age,
+        sex: res.data.sex,
+        address: res.data.address,
+        phone: res.data.phone,
+        id: res.data._id,
+        type: res.data.type
+      }
+      dispatch(authActions.login(authUser))
+    }
+  }
+  useEffect( () => {
+
+    console.log("Session:::")
+    console.log(usr)
+    func().then(r => {
+      console.log(r)})
+
+  },[])
+
   return <RouterProvider router={router} />;
 }
 

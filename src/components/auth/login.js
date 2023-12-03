@@ -39,6 +39,9 @@ const Login = () => {
         onClick={toggleForm}
         className={`${styles.btn} ${styles.solid}`}
       />
+         <button className={styles.btn}>
+                <a href='/employeesignup'>Wanna Join us</a>
+              </button>
     </form>
   ) : (
     <form action="#" className={styles["sign-up-form"]}>
@@ -81,6 +84,9 @@ const Login = () => {
         value="Sign up"
         onClick={toggleForm}
       />
+         <button className={styles.btn}>
+                <a href='/employeesignup'>Wanna Join us</a>
+              </button>
     </form>
 
   );
@@ -88,6 +94,7 @@ const Login = () => {
   return (
     <>
       <NavBar />
+
       <div className={`${containerClass} ${styles.container}`}>
         <div className={styles["forms-container"]}>
           <div className={`${styles["signin-signup"]} ${containerClass}`}>
@@ -129,6 +136,9 @@ const Login = () => {
                 onClick={toggleForm}
               >
                 Sign up
+              </button>
+              <button className={styles.btn} style={{zIndex:'3'}}>
+                <a href='/employeesignup'>Wanna Join us</a>
               </button>
             </div>
             <img src={logoimage} className={styles.image} alt="" />

@@ -130,3 +130,68 @@
     }
   }
   
+/* Existing CSS classes remain unchanged */
+ 
+
+/* Add styles for GIF */
+.gif {
+  /* Adjust the positioning of the GIF */
+  width: 400px;
+  height: 400px;
+  /* Other styles as needed */
+}
+
+/* Apply styles when title is 'PROTECT YOUR CAR' */
+.protectCar .disclaimer {
+  order: 2; /* Move the content to the right */
+}
+
+.protectCar .gif {
+  order: 1; /* Place the GIF on the left */
+  /* Adjust the positioning of the GIF */
+  /* Other styles as needed */
+}
+
+/* Media queries for tablet and mobile screens remain unchanged */
+/* Styles for GIF on the left side */
+.gif.left {
+  float: left; /* Align the GIF to the left */
+  margin-right: 20px; /* Adjust the margin as needed */
+}
+
+/* Styles for content on the right side */
+.disclaimer.right {
+  float: right; /* Align the content to the right */
+  /* Add any additional styling for the right side */
+}
+
+.gif {
+  width: 400px;
+  height: 400px;
+  /* Other styles as needed */
+}
+
+/* Apply styles when title is 'PROTECT YOUR CAR' */
+.protectCar .disclaimer {
+  order: 1; /* Move the content to the left */
+}
+
+.protectCar .gif {
+  order: 2; /* Place the GIF on the right */
+  /* Adjust the positioning of the GIF */
+  /* Other styles as needed */
+}
+
+/* Media queries for tablet and mobile screens remain unchanged */
+
+/* Styles for GIF on the right side */
+.gif.right {
+  float: right; /* Align the GIF to the right */
+  margin-left: 20px; /* Adjust the margin as needed */
+}
+
+/* Styles for content on the left side */
+.disclaimer.left {
+  float: left; /* Align the content to the left */
+  /* Add any additional styling for the left side */
+}

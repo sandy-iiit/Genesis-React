@@ -1,0 +1,73 @@
+/* Variables or Constants */
+:root {
+    --primary-color: #3E54AC;
+    --secondary-color: #27ae60;
+    --spacing: 20px;
+  }
+  
+  /* Main container */
+  .fullwidthBlock {
+    background-color: #f9f9f9;
+    padding: var(--spacing) 0;
+  }
+  
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .sectionTitle {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: var(--spacing);
+  }
+  
+  /* Grid Layout */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+  }
+  
+  /* Column Sizes */
+  .colMd4 {
+    flex: 0 0 calc(33.33% - var(--spacing));
+    max-width: calc(33.33% - var(--spacing));
+  }
+  
+  /* News Card Styles */
+  .news {
+    background-color: #fff;
+    border: 1px solid #eee;
+    padding: var(--spacing);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .news:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  .news img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: var(--spacing);
+  }
+  
+  .entryTitle {
+    font-size: 18px;
+    color: var(--primary-color);
+  }
+  
+  .entryTitle a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .entryTitle a:hover {
+    text-decoration: underline;
+  }
+  
