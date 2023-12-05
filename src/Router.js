@@ -22,6 +22,8 @@ import InsurancePolicyChart from './components/DashBoards/CompanyStats/Insurance
 import Announcement from './components/DashBoards/Announcements/Announcement';
 import TrackPolicy from './components/DashBoards/TrackPolicy/TrackPolicy';
 import EmployeeSignupForm from './components/auth/EmployeeSignup';
+import ContactUs from './components/AboutusandContatcus/ContactUs';
+import AboutUs from './components/AboutusandContatcus/AboutUs';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -96,6 +98,14 @@ const router = createBrowserRouter([
     {
         path: '/employeesignup',
         element: <EmployeeSignupForm/>
+    },
+    {
+        path: '/contactus',
+        element: <ContactUs/>
+    },
+    {
+        path: '/aboutus',
+        element: <AboutUs/>
     }
 ])
 

@@ -130,7 +130,7 @@ img {
  position: relative;
 
   /* Set the background image */
-  background-image: url('./images/Online world-pana.png'); /* Replace 'path_to_your_image.jpg' with your image file path */
+  background-image: url('./Online world-pana.png'); /* Replace 'path_to_your_image.jpg' with your image file path */
   background-size: cover; /* Scale the background image to cover the entire container */
   background-position: center; /* Position the background image at the center */
   background-repeat: no-repeat; /* Prevent the background image from repeating */
@@ -360,7 +360,7 @@ img {
 }
 
 .features {
-  *zoom: 1;
+  zoom: 1;
   margin: 0 -15px;
   position: relative;
   z-index: 1;
@@ -502,7 +502,7 @@ img {
   content: " ";
   width: 7px;
   height: 5px;
-  background: url(images/p1.jpeg) no-repeat;
+ 
   display: inline-block;
   margin-left: 10px;
 }

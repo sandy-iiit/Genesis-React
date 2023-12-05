@@ -4,6 +4,8 @@ import "./contactus.css"
 import ContactAddresscards from "./ContactAddresscards";
 import OnlineWorldImage from './Online world-pana.png';
 import SocialIcons from "./Iconscontactus";
+import NavBar from "../NavBar";
+import Footer from "../Footer/Footer";
 
 
 
@@ -78,6 +80,7 @@ const ContactUs = () => {
 
     return (
       <>
+      <NavBar/>
       <div className="background-container">
        <ContactAddresscards />
        <div className="image-container">
@@ -146,6 +149,7 @@ const ContactUs = () => {
         </div>
         <SocialIcons />
       
+      <Footer/>
       </>
     );
   };

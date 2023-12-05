@@ -1,10 +1,14 @@
 // AboutUs.js
 import React from 'react';
 import AboutUsImgSec from "./AboutUsImgSec"
+import NavBar from '../NavBar';
+import Footer from '../Footer/Footer';
 
 const AboutUs = () => {
   return (
+
     <div>
+      <NavBar/>
       <div className="fullwidth-block" data-bg-color="#f1f1f1">
         <div className="container">
           <h2 className="section-title">The history</h2>
@@ -29,8 +33,9 @@ const AboutUs = () => {
       </div>
 
       <AboutUsImgSec />
-
+<Footer/>
     </div>
+
   );
 };
 
