@@ -8,28 +8,52 @@ import newpic5 from '../assets/images/home-offers/images_pexels_com-pexels-photo
 import newpic6 from '../assets/images/home-offers/images_pexels_com-pexels-photo-7163953.png';
 import newpic8 from '../assets/images/home-offers/offer-wide@2x.jpg';
 import Offers from "../components/Home/Offers";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import Footer from "../components/Footer/Footer";
 import FindAgent from "../components/Home/FindAgent";
 import InsuranceCard from "../components/Home/InsuranceCard";
 import LatestNews from "../components/Home/LatestNews";
+import LoadingPage from "../components/LoadingPage";
 
 
 function Home(){
     const images=[newpic5,newpic6,newpic8,newpic2,newpic3,newpic4]
 
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        // Simulate an asynchronous operation (e.g., fetching data) that takes 2 seconds
+        const fetchData = async () => {
+            // Your asynchronous operation here...
+
+            // Simulate a delay
+            await new Promise(resolve => setTimeout(resolve, 1300));
+
+            // Set isLoading to false when the operation is complete
+            setIsLoading(false);
+        };
+        fetchData().then(r => {})
+        }, []); // Empty dependency array ensures that the effect runs once after the initial render
+
+
     return (
         <>
-            <NavBar/>
-            <Carousel img1={newpic}/>
-            <Offers images={images}/>
-            <FindAgent/>
-            <InsuranceCard/>
-            <LatestNews/>
-            <Footer/>
+            {isLoading && <LoadingPage/>}
+            {!isLoading && <>
+                <NavBar/>
+                <Carousel img1={newpic}/>
+                <Offers images={images}/>
+                <FindAgent/>
+                <InsuranceCard/>
+                <LatestNews/>
+                <Footer/>
+                </>
+            }
         </>
     )
 
 }
+
+
 
 export default Home

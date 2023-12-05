@@ -1,0 +1,48 @@
+.container12 {
+    justify-content: space-between;
+    border-radius: 20px;
+    background-color: rgba(192, 212, 250, 0.7);
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 87%;
+    margin: auto;
+}
+
+.card12 {
+    border-radius: 20px;
+    border-style: solid;
+    flex: 0 1 23%;
+    border-color: #3e54ac;
+    background-color: white;
+    text-align: center;
+    width: 23%;
+    display: flex;
+    margin: 50px 50px 50px 65px;
+    height: 450px;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.card12:hover {
+    transform: scale(1.1);
+    box-shadow: 13px 16px 21px 5px rgba(62, 84, 172, 0.84);
+}
+
+.button {
+    width: 150px;
+    height: 40px;
+    margin-bottom: 5px;
+    background-color: #3e54ac;
+    border-radius: 100px;
+    border-style: none;
+    color: whitesmoke;
+    font-size: larger;
+    align-self: center;
+}
+
+.button:hover {
+    width: 65%;
+    height: 50px;
+}

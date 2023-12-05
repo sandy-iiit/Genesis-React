@@ -28,6 +28,14 @@ import Policies from "./components/Policies/Policies";
 import AboutUs from "./components/AboutusandContatcus/AboutUs";
 import ContactUs from "./components/AboutusandContatcus/ContactUs";
 import EmployeeSignup from "./pages/Auth/EmployeeSignup";
+import HealthPolicy from "./components/PoliciesCards/HealthPolicy";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer/Footer";
+import LifePolicy from "./components/PoliciesCards/LifePolicy";
+import TransportPolicy from "./components/PoliciesCards/TransportPolicy";
+import HealthPolicyPage from "./components/PolicyDetails/HealthPolicyPage";
+import LifePolicyPage from "./components/PolicyDetails/LifePolicyPage";
+import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage";
 const router=createBrowserRouter([
     {
         path:'/',
@@ -137,6 +145,30 @@ const router=createBrowserRouter([
         path:"/trackPolicy",
         element:<TrackPolicy/>
     },
+    {
+        path:"/healthpolicies/",
+        element:<><NavBar/><HealthPolicy/><Footer/></>
+    },
+    {
+        path:"/lifepolicies",
+        element:<><NavBar/><LifePolicy/><Footer/></>
+    },
+    {
+        path:"/transportpolicies",
+        element:<><NavBar/><TransportPolicy/><Footer/></>
+    },
+    {
+        path:"/PolicyDetails/health",
+        element:<><NavBar/><HealthPolicyPage/><Footer/></>
+    },
+    {
+        path:"/PolicyDetails/life",
+        element:<><NavBar/><LifePolicyPage/><Footer/></>
+    },
+    {
+        path:"/PolicyDetails/transport",
+        element:<><NavBar/><TransportPolicyPage/><Footer/></>
+    }
 
 ])
 

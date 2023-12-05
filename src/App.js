@@ -11,6 +11,9 @@ import {useDispatch, useSelector} from "react-redux";
 function App() {
   const dispatch=useDispatch();
   const usr=useSelector((state)=>state.auth)
+
+
+
   async function func(){
     const res = await axiosConfiguration.get("/check")
     console.log(res.data);
