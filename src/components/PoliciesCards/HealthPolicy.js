@@ -3,7 +3,8 @@ import Card from "./Card";
 import Content from "./Content";
 import axios from "axios";
 import axiosConfiguration from "../../config/axiosConfiguration";
-
+import pic from "../../assets/images/Policiesphotos/Doctor_Rafiki.jpeg"
+import pic2 from "../../assets/images/Policiesphotos/Insurance_Pana.jpeg"
 
 function HealthPolicy () {
 
@@ -35,7 +36,7 @@ function HealthPolicy () {
         < Content
             divContent={"Health insurance is a type of insurance that helps individuals and families pay for medical expenses. This provides Financial protection against the cost of medical and surgical expenses .Health insurance policies can cover a wide range of medical expenses, including hospitalization, doctor visits, prescription drugs, and medical procedures. There are several types of health insurance plans, including HMOs, PPOs, and high-deductible health plans (HDHPs)."}
             subHeading={"WHY YOU NEED IT?"}
-            img={"/Insurance-pana.png"}
+            img={pic2}
             c2={"#F8ABAB"}
             c1={"#800000"}
         />
@@ -50,7 +51,7 @@ function HealthPolicy () {
                 "↪   Having health insurance can provide peace of mind covered under unexpected medical expenses.\n" +
                 "    It can also help to reduce stress and anxiety related to medical issues."]}
             subHeading={"WHY YOU NEED IT?"}
-            img={"Doctor-rafiki.png"}
+            img={pic}
             c1={"#00008B"}
             c2={"#C0DAFF"}
         />

@@ -19,7 +19,7 @@ const Card = ({data,type}) => {
                                 )}
                             </div>
                         ))}
-                        <button className="button"><Link to={link}>Select</Link></button>
+                       <Link to={link}> <button className="button">Select</button></Link>
                     </div>
                 );
             })}

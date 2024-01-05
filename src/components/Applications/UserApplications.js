@@ -38,11 +38,17 @@ function UserApplications(){
     }
 
     function openHealth(_id) {
-        
+        console.log(_id)
+        const link="/openHealthApp/"+_id
+        console.log(link)
+        navigate(link)
     }
 
     function openLife(_id) {
-        
+        console.log(_id)
+        const link="/openLifeApp/"+_id
+        console.log(link)
+        navigate(link)
     }
 
     async function handleSubmit(e) {

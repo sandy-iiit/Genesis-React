@@ -2,10 +2,13 @@ import classes from "../Reviews/ViewReviews.module.css";
 import {useEffect, useState} from "react";
 import axiosConfiguration from "../../config/axiosConfiguration";
 import {useNavigate} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 function ViewReviews(){
 
     const [reviews,setReviews]=useState([])
+    const userType=useSelector((state)=>state.auth.type)
+    console.log(userType)
     const navigate=useNavigate()
     useEffect(()=>{
         axiosConfiguration.get("/reviews").then((revs)=>{
@@ -41,11 +44,11 @@ window.location.reload()
                             Review: {review.review}
                         </div>
 
-                    <div>
+                        { userType==="Admin" && <div>
                     <button onClick={()=>{handleClick(review._id,review.email)}} className={classes.submitterrr}>
                     Delete
                     </button>
-                    </div>
+                    </div>}
                     </div>
                     ))
 

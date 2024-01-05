@@ -7,6 +7,8 @@ import newpic4 from '../assets/images/home-offers/images_pexels_com-pexels-photo
 import newpic5 from '../assets/images/home-offers/images_pexels_com-pexels-photo-799443.png';
 import newpic6 from '../assets/images/home-offers/images_pexels_com-pexels-photo-7163953.png';
 import newpic8 from '../assets/images/home-offers/offer-wide@2x.jpg';
+import newpic9 from '../assets/images/home-offers/carousel2.jpeg';
+import newpic10 from '../assets/images/home-offers/carousel3.jpeg';
 import Offers from "../components/Home/Offers";
 import {useEffect, useState} from "react";
 import Footer from "../components/Footer/Footer";
@@ -41,7 +43,7 @@ function Home(){
             {isLoading && <LoadingPage/>}
             {!isLoading && <>
                 <NavBar/>
-                <Carousel img1={newpic}/>
+                <Carousel img1={newpic} img2={newpic9} img3={newpic10}/>
                 <Offers images={images}/>
                 <FindAgent/>
                 <InsuranceCard/>

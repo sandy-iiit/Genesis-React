@@ -6,10 +6,12 @@ import NavBar from '../../NavBar';
 import Footer from '../../Footer/Footer';
 import axiosConfiguration from "../../../config/axiosConfiguration";
 import {useSelector} from "react-redux";
+import {useNavigate} from "react-router-dom";
 
 const Announcement = () => {
     const [recipient, setRecipient] = useState('users');
     const user=useSelector((state)=>state.auth)
+    const navigate=useNavigate()
     const handleRecipientChange = (e) => {
         setRecipient(e.target.value);
     };
@@ -31,6 +33,7 @@ const Announcement = () => {
         console.log(b)
         const res=axiosConfiguration.post("/send_email",b)
         console.log(res.data)
+        navigate("/dashBoard")
     }
 
     return (

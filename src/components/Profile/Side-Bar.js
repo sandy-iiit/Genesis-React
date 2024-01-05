@@ -42,7 +42,7 @@ function SideBar(){
                 </NavLink>
             </div>
             }
-            {(type==="Admin" || type==="Agent") && <div className={classes.sideItem}>
+            { <div className={classes.sideItem}>
                 <NavLink to={"/viewReviews"}>
                     <button className={classes.det}>View Reviews</button>
                 </NavLink>

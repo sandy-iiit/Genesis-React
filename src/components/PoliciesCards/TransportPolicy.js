@@ -3,7 +3,11 @@ import Card from "./Card";
 import Content from "./Content";
 import axios from "axios";
 import axiosConfiguration from "../../config/axiosConfiguration";
-
+import pic from "../../assets/images/Policiesphotos/Vehicle Sale-cuate.png"
+import pic2 from "../../assets/images/Policiesphotos/tpl.png"
+import pic3 from "../../assets/images/Policiesphotos/care-got-fire.png"
+import pic4 from "../../assets/images/Policiesphotos/injured-man.png"
+import pic5 from "../../assets/images/Policiesphotos/compinc.jpg"
 
 function TransportPolicy() {
 
@@ -38,7 +42,7 @@ function TransportPolicy() {
             }}>Buy/Renew Motor Insurance Policy Online Instantly
             </h2>
             <Content
-                img="/Vehicle Sale-cuate.png"
+                img={pic}
                 divContent={" Motor Insurance, also known as auto insurance, is a type of vehicle insurance policy that protects you and your car / bike from any risks and damages caused\n" +
                     "            from accidents, thefts or natural disasters. So, you will be financially secure in case of any losses that may be incurred because of any such unforeseen\n" +
                     "            circumstances. In addition to that, you will also be protected from third-party liabilities."}
@@ -47,7 +51,7 @@ function TransportPolicy() {
                 c2='#D3E1FB'
             />
             <Content
-                img="/tpl.png"
+                img={pic2}
                 divContent={[<strong>Third-party Car
                     Insurance</strong>, "in motor insurance refers to the legal and financial responsibility of the policyholder for any damage, injury or loss caused to a third-party in an\n" +
                 "        accident involving the policyholder's vehicle. In other words, if you are at fault in an accident, your insurance policy will cover the damages and compensation\n" +
@@ -58,7 +62,7 @@ function TransportPolicy() {
                 c2={"rgba(255,0,0,0.5)"}
             />
             <Content
-                img="/care-got-fire.png"
+                img={pic3}
                 divContent={[<strong> Own Damage Stand-Alone
                     Cover</strong>, "is a type of motor insurance policy that covers the damage to your own vehicle, regardless of who is at fault for the accident. With an Own Damage Stand Alone Cover, you can purchase coverage that specifically\n" +
                 "    protects your vehicle from damages caused by",
@@ -69,7 +73,7 @@ function TransportPolicy() {
                 c2="peachpuff"
             />
             <Content
-                img="/injured-man.png"
+                img={pic4}
                 divContent={[
                     <strong>Personal Injury Protection
                         (PIP)</strong>, " is a type of car insurance coverage that pays for medical expenses, lost wages, and other expenses related to injuries sustained in a car accident."
@@ -87,7 +91,7 @@ function TransportPolicy() {
                 c2={"#FFB6C1"}
             />
             <Content
-                img="/compinc.png"
+                img={pic5}
                 divContent={[<strong>Comprehensive motor
                     insurance</strong>, " also known as fully-Comprehensive-Insurance is a type of car insurance policy that provides the widest range of coverage for your vehicle. This policy not only covers third-party liabilities but also covers damage to your own vehicle from various causes." +
                 "Comprehensive motor insurance typically covers:", <br/>,

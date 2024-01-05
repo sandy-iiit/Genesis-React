@@ -3,6 +3,9 @@ import Card from "./Card";
 import Content from "./Content";
 import axios from "axios";
 import axiosConfiguration from "../../config/axiosConfiguration";
+import pic1 from "../../assets/images/Policiesphotos/Public health-rafiki.png"
+import pic2 from "../../assets/images/Policiesphotos/Public health-pana.png"
+import pic3 from "../../assets/images/Policiesphotos/life-insurance.png"
 
 const LifePolicy = () => {
 
@@ -26,13 +29,13 @@ const LifePolicy = () => {
                 fontSize: "xxx-large"
             }}>Life Insurance</h1>
             <Content
-                img="/life-insurance-word.jpg"
+                img={pic3}
                 divContent={"Life insurance is a type of insurance policy that pays out a lump sum of money to your beneficiaries upon your death.\n" +
                     "            The purpose of life insurance is to provide financial protection to your loved ones and dependents in case you pass away unexpectedly.\n" +
                     "        "}
                 subHeading={"What is Life Insurance ?"}
-                c1={"#5AA469"}
-                c2={"#00FF00"}
+                c2={"#1AA489"}
+                c1={"#00FF00"}
             />
             <h2 className="subheading" style={{
                 textAlign: "center",
@@ -40,7 +43,7 @@ const LifePolicy = () => {
             }}
             >Types of LIFE Insurances We Offer :</h2>
             <Content
-                img="/Public health-rafiki.png"
+                img={pic1}
                 subHeading={"Whole Life Insurance"}
                 divContent={"Whole life insurance is a type of permanent life insurance that provides coverage for the lifetime of the policyholder,\n" +
                     "        as long as the premiums are paid. This policy provides coverage for the entire life of the policyholder and includes\n" +
@@ -51,7 +54,7 @@ const LifePolicy = () => {
                 c2={"#6495ED"}
             />
             <Content
-                img="/Public health-pana.png"
+                img={pic2}
                 subHeading={"Whole Life Insurance"}
                 divContent={"Whole life insurance is a type of permanent life insurance that provides coverage for the lifetime of the policyholder,\n" +
                     "        as long as the premiums are paid. This policy provides coverage for the entire life of the policyholder and includes\n" +
