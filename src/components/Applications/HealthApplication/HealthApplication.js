@@ -2,7 +2,7 @@ import classes from "../TransportApplication/TransportApplication.module.css"
 
 import axios from "axios";
 import {useSelector} from "react-redux";
-function HealthApplication(){
+function HealthApplication(props){
 
     const user=useSelector((state)=>state.auth)
     const handleSubmit = async (e) => {
@@ -15,6 +15,7 @@ function HealthApplication(){
         formData.append('firstName', e.target.elements.firstName.value);
         formData.append('lastName', e.target.elements.lastName.value);
         formData.append('nominee', e.target.elements.nominee.value);
+        formData.append('sex', e.target.elements.sex.value);
         formData.append('nomineeAge', e.target.elements.nomineeAge.value);
         formData.append('nomineeRelation', e.target.elements.nomineeRelation.value);
         formData.append('policyId', e.target.elements.policyId.value);
@@ -24,6 +25,7 @@ function HealthApplication(){
         formData.append('policyTerm', e.target.elements.policyTerm.value);
         formData.append('healthCondition', e.target.elements.healthCondition.value);
         formData.append('policyType', "HEALTH");
+        formData.append('policyTerm', e.target.elements.policyTerm.value);
 
         // ... append other form fields
 
@@ -113,12 +115,12 @@ function HealthApplication(){
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Id</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" name="policyId"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" name="policyId" value={props.id}  required />
                 </div>
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Name</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" name="policyName"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" name="policyName" value={props.name}   required />
                 </div>
 
                 <div className={classes.row2}>
@@ -130,6 +132,7 @@ function HealthApplication(){
                             type="number"
                             id="amount"
                             name="amount"
+                            value={props.cover}
                             required
                         />
                     </div>
@@ -139,6 +142,7 @@ function HealthApplication(){
 
                             id="policyTerm"
                             name="policyTerm"
+                            value={props.term}
                             className={`${classes.innerRow2} ${classes.input}`}
                             required
                         />
@@ -146,7 +150,7 @@ function HealthApplication(){
                 </div>
 
                 {/*<input  value="sandy" id="applier"  style={{ display: 'none' }} required />*/}
-                {/*<input   id="policyType"  style={{ display: 'none' }} required />*/}
+                <input   id="policyType" name={"policyType"} value={props.type} style={{ display: 'none' }} required />
                 <button className={classes.button} type="submit">
                     Submit
                 </button>

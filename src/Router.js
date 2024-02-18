@@ -102,7 +102,7 @@ const router=createBrowserRouter([
         element:<TransportForm/>
     } ,
     {
-        path:"/healthApplication",
+        path:"/healthApplication/:name/:id/:cover/:term",
         element:<HealthForm/>
     },
     {
@@ -158,8 +158,9 @@ const router=createBrowserRouter([
         element:<><NavBar/><TransportPolicy/><Footer/></>
     },
     {
-        path:"/PolicyDetails/health",
+        path:"/PolicyDetails/health/:id",
         element:<><NavBar/><HealthPolicyPage/><Footer/></>
+
     },
     {
         path:"/PolicyDetails/life",

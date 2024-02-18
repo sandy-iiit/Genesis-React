@@ -58,8 +58,8 @@ function IndividualHealthApplication(){
 
     async function handleSubmit(e) {
         e.preventDefault()
-        const v = e.target.elements.verificationStatus
-
+        const flag=e.target.flag.value
+        const v = flag==="Accept"?"Verified":"Not Verified Yet"
         const b = {
             appId:id,
             type: data.policyType,
@@ -197,12 +197,12 @@ function IndividualHealthApplication(){
                 {/*<input  value="sandy" id="applier"  style={{ display: 'none' }} required />*/}
                 {/*<input   id="policyType"  style={{ display: 'none' }} required />*/}
                 <input style={{display:"none"}} value={data.appId}/>
-                {user.type==="Admin" ?<> <div className={classes.row1}>
-                    <p className={classes.label}>Verification Status</p>
-                    <input value={data.Status}  className={`${classes.innerRow1} ${classes.input}`}  name="verificationStatus"  />
-                </div> <button className={classes.button} type="submit">
+                {user.type==="Admin" ?<div style={{display:"flex"}}> <select name={"flag"}>
+                    <option>Accept</option>
+                    <option>Reject</option>
+                </select> <button className={classes.button} type="submit">
                     Verify
-                </button></>:<button type={"submit"} style={{display:"none"}}></button>}
+                </button></div>:<button type={"submit"} style={{display:"none"}}></button>}
             </form>
             <Footer/>
         </>

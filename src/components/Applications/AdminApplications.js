@@ -16,6 +16,7 @@ function AdminApplications(){
     useEffect(() => {
         const fetchData = async () => {
             let link="";
+
             try {
                 if(appType==="health"){
                     link="/health-applications"
@@ -72,8 +73,22 @@ function AdminApplications(){
             search: search,
             id:user
         }
-        const res = await axiosConfiguration.post("/search-my-applications",b)
-        setApps(res.data)
+        let link="";
+
+            if(appType==="health"){
+                link="/search-health-applications"
+            }
+            else if(appType==="transport"){
+                link="/search-transport-applications"
+            }
+            else if(appType==="life"){
+                link="/search-life-applications"
+            }
+            else if(appType==="agent"){
+                link="/search-agent-applications"
+            }
+            const res = await axiosConfiguration.post(link,b)
+            setApps(res.data)
     }
 
     return(

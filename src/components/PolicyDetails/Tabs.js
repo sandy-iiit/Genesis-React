@@ -54,7 +54,7 @@ function Tabs({dataarray,id}) {
             </div>
             <Accordion dataarray={array} />
             <div className="buyPolicy info" id="buyPolicy" style={{display:"none"}}>
-                <Link to={"/healthApplication"} style={{textAlign:'center'}} > <h3>Go to application</h3></Link>
+                <Link to={"/healthApplication/"+dataarray.Name+"/"+dataarray.id+"/"+dataarray.Cover+"/"+dataarray.Term} style={{textAlign:'center'}} > <h3>Go to application</h3></Link>
             </div>
         </>
 

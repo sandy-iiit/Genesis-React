@@ -29,7 +29,7 @@ function UserApplications(){
         }
     }, [user]);
 
-    async function openTransport(id) {
+     function openTransport(id) {
         console.log(id)
         const link="/openTransportApp/"+id
         console.log(link)
@@ -109,20 +109,20 @@ function UserApplications(){
             )}
             <div>Type: {item.policyType}</div>
             </div>
-        {item.policyType === 'Health' && (
+        {(item.policyType === 'Health' || item.policyType==="HEALTH") && (
             <div className={`${styles.innerItem} ${styles.A}`}>
-                <button className={styles.opener} onClick={()=>{openHealth(item._id).then(r => {})}}>Open application</button>
+                <button className={styles.opener} onClick={()=>{openHealth(item._id)}}>Open application</button>
             </div>
             )}
         {item.policyType === 'LIFE' && (
             <div className={`${styles.innerItem} ${styles.A}`}>
-                <button className={styles.opener} onClick={()=>{openLife(item._id).then(r => {})}}>Open application</button>
+                <button className={styles.opener} onClick={()=>{openLife(item._id)}}>Open application</button>
             </div>
             )}
         {item.policyType === 'TRANSPORT' && (
             <div className={`${styles.innerItem} ${styles.A}`}>
                 {/*href={`/transport-applications/${item._id}`}*/}
-            <button className={styles.opener} onClick={()=>{openTransport(item._id).then(r => {})}}>Open application</button>
+            <button className={styles.opener} onClick={()=>{openTransport(item._id)}}>Open application</button>
             </div>
             )}
             </div>

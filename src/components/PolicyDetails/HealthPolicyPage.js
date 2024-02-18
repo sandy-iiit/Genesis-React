@@ -3,20 +3,36 @@ import React, {useEffect, useState} from "react";
 import Tabs from "./Tabs";
 import './PolicyPage.css';
 import {useParams} from "react-router-dom";
+import axios from "axios";
+import axiosConfiguration from "../../config/axiosConfiguration";
 
 
 function HealthPolicyPage ()
 {
     const {id}=useParams()
+    console.log(id)
+    const [ob,setOb]=useState({})
+
+    useEffect(()=>{
+
+             axiosConfiguration.get("/policypage/"+id).then((p)=>{
+                 setOb(p.data)
+                 console.log(ob)
+
+
+
+             })
+
+    },[])
 
     const array =
         {
-            id:'6444ea60ae31a3ac1ae27181',
-            Name:'Sulabh',
-            Cover:800000,
-            Term:9,
-            Type:'Health Maintenance Org.(HMO)',
-            KeyFeatures:"※Provides comprehensive financial protection \n\n※Get treated on a cashless basis across 14,000 + network hospitals in India\n\n※Secure Benefit offers additional coverage amount equivalent to 100%/200% of the Base Sum Insured.\n\n※Get daily hospitalization cash benefit up to ₹ 5000.",
+            id:id,
+            Name:ob.Name,
+            Cover:ob.Cover,
+            Term:ob.Term,
+            Type:ob.Type,
+            KeyFeatures:ob.keyfeatures,
 
 
 
@@ -98,4 +114,5 @@ function HealthPolicyPage ()
 
 
 }
+
 export default HealthPolicyPage

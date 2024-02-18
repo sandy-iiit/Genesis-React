@@ -2,7 +2,7 @@ import classes from "./TransportApplication.module.css";
 import NavBar from "../../NavBar";
 import Footer from "../../Footer/Footer";
 import {useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
 import axiosConfiguration from "../../../config/axiosConfiguration";
 
@@ -11,6 +11,7 @@ function IndividualTransportApplication(){
 
     const user=useSelector((state)=>state.auth)
     const {id}=useParams()
+    const navigate=useNavigate()
     const emptyObject = {
         appId: "",
         firstName: "",
@@ -59,7 +60,8 @@ function IndividualTransportApplication(){
 
     async function handleSubmit(e) {
         e.preventDefault()
-        const v = e.target.elements.verificationStatus
+        const flag=e.target.flag.value
+        const v = flag==="Accept"?"Verified":"Not Verified Yet"
 
         const b = {
             appId:id,
@@ -77,6 +79,7 @@ function IndividualTransportApplication(){
         }
 
         const res = await axiosConfiguration.post("/verifyTransport", b)
+        navigate("")
         console.log(res.data)
     }
 
@@ -106,9 +109,9 @@ function IndividualTransportApplication(){
                     <p className={classes.label}>Name</p>
                     <input  id={"firstName"} name={"firstName"} value={data.firstName}  type="text" className={classes.row13} placeholder="FirstName"
                             required></input>
-                    <input  id="lastName" name="lastName" value={data.lastName} type="text" className={classes.row13} placeholder="LastName" required></input></div>
+                    <input  id="lastName" name="lastName" value={data.lastName} type="text" className={classes.row13} placeholder="LastName" ></input></div>
                 <div className={classes.row1}>
-                    <p className={classes.label}>Sex</p> <input value={data.sex}  id="sex" name="sex" className={classes.innerRow1} placeholder="Sex" required></input>
+                    <p className={classes.label}>Sex</p> <input value={"Male"}  id="sex" name="sex" className={classes.innerRow1} placeholder="Sex" required></input>
                 </div>
                 <div className={classes.row2}>
                     <div className={classes.subrow}><p className={classes.label}>AADHAR</p> <button onClick={()=>{openFile(data.aadhar)}} type={"button"}  className={`${classes.innerRow2} ${classes.opener}`}
@@ -142,7 +145,7 @@ function IndividualTransportApplication(){
                 <div className={classes.row2}>
                     <div className={classes.subrow}><p className={classes.label}>Engine</p>
                         <input value={data.engine} id="enginee" name="enginee" className={classes.innerRow2}
-                                required></input></div>
+                                ></input></div>
                     <div className={classes.label}><p className={classes.label}>Chassis</p>
                         <input value={data.chassis}  id="chassis" name="chassis" className={classes.innerRow2}
                                 required></input></div>
@@ -215,12 +218,12 @@ function IndividualTransportApplication(){
                 {/*<input  value="sandy" id="applier"  style={{ display: 'none' }} required />*/}
                 {/*<input   id="policyType"  style={{ display: 'none' }} required />*/}
                <input style={{display:"none"}} value={data.appId}/>
-                {user.type==="Admin" ?<> <div className={classes.row1}>
-                    <p className={classes.label}>Verification Status</p>
-                    <input value={data.Status}  className={`${classes.innerRow1} ${classes.input}`}  name="verificationStatus"  />
-                </div> <button className={classes.button} type="submit">
+                {user.type==="Admin" ?<div style={{display:"flex"}}> <select name={"flag"}>
+                    <option>Accept</option>
+                    <option>Reject</option>
+                </select> <button className={classes.button} type="submit">
                     Verify
-                </button></>:<button type={"submit"} style={{display:"none"}}></button>}
+                </button></div>:<button type={"submit"} style={{display:"none"}}></button>}
             </form>
             <Footer/>
             </>
