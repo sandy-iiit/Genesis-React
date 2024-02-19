@@ -4,12 +4,11 @@ import Footer from '../../Footer/Footer';
 import NavBar from '../../NavBar';
 
 const TrackPolicy = () => {
-    const users = []; 
+    const users = [];
 
     return (
         <>
             <NavBar />
-            
 
             <main>
                 <h1 className={styles.mainTitle}>Find the User Policies</h1>

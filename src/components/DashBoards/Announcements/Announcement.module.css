@@ -1,51 +1,60 @@
-/* Announcement.module.css */
 
 /* Apply CSS Modules to class names */
 .cardContainer {
     display: flex;
     justify-content: flex-start;
     padding: 20px;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 20px;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .cardTitle {
+}
+
+.cardTitle {
     margin-bottom: 20px;
     text-align: center;
-  }
-  .form{
+}
+.form{
     width: 100%;
-  }
-  .formGroup {
+}
+.formGroup {
     margin-bottom: 20px;
     width: 100%;
-  }
-  
-  label {
+}
+
+label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
     width: 90px;
-  }
-  
-  input[type="email"],
-  input[type="text"],
-  textarea {
+}
+
+.inp{
     width: 100%;
     padding: 10px;
     border: 1px solid rgb(12, 17, 103);
     border-radius: 5px;
     margin-bottom: 10px;
     box-sizing: border-box; /* Ensures padding is included in the width */
-  }
-  
-  button[type="submit"] {
+}
+.textarea{
+    width: 100%;
+    padding: 10px;
+
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.textarea:hover{
+    border: 1px solid rgb(12, 17, 103);
+    border-radius: 1px;
+}
+
+.buttt{
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #008CBA;
@@ -53,9 +62,8 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  button[type="submit"]:hover {
+}
+
+.buttt:hover {
     background-color: #006B8F;
-  }
-  
+}

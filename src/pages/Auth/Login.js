@@ -198,6 +198,7 @@ const Login = () => {
                 value="Sign up"
 
             />
+
         </form>
 
     );
@@ -246,10 +247,11 @@ const Login = () => {
                         </button>
                         <button
                             className={`${styles.btn} ${styles.transparent}`}
-                         
+                            onClick={()=>{navigate("/agentSignUp")}}
                         >
-                           <a href="/employeesignup" style={{textDecoration:'none',fontSize:'12px',color:'white'}}> Wanna Join Us</a>
+                             Wanna Join Us
                         </button>
+
                     </div>
                     <img src={logoimage} className={styles.image} alt="" />
                 </div>

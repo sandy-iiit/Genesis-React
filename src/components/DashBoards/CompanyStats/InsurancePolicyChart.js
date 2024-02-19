@@ -93,25 +93,25 @@ const InsurancePolicyChart = () => {
 
     return (
         <>
-        <NavBar/>
-         <div className={styles.cardHeader}>
-                    <div>
+            <NavBar/>
+            <div className={styles.cardHeader}>
+                <div>
                     <h1>Insurance Policies Overview</h1>
-                    </div>
                 </div>
-        <div className={styles.chartContainer}>
-            
-            <div className={`${styles.chart} ${styles.barChart}`}>
-                <canvas ref={chartRef}></canvas>
             </div>
-            <div className={`${styles.chart} ${styles.pieChart}`}>
-                <canvas ref={pieChartRef}></canvas>
+            <div className={styles.chartContainer}>
+
+                <div className={`${styles.chart} ${styles.barChart}`}>
+                    <canvas ref={chartRef}></canvas>
+                </div>
+                <div className={`${styles.chart} ${styles.pieChart}`}>
+                    <canvas ref={pieChartRef}></canvas>
+                </div>
+                <div className={`${styles.chart} ${styles.lineChart}`}>
+                    <canvas ref={lineChartRef}></canvas>
+                </div>
             </div>
-            <div className={`${styles.chart} ${styles.lineChart}`}>
-                <canvas ref={lineChartRef}></canvas>
-            </div>
-        </div>
-         <Footer/>
+            <Footer/>
         </>
     );
 };

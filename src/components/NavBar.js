@@ -22,8 +22,8 @@ import axiosConfiguration from "../config/axiosConfiguration";
 
 const pages = [
     ['Home','/'],
-    ['About Us','/aboutus' ],
-    ['Contact Us','/contactus'],
+    ['About Us','/aboutUs' ],
+    ['Contact Us','/contactUs'],
     ['Services','/services'],
     ['Policies','/policies'],
 ]

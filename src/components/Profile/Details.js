@@ -104,7 +104,7 @@ function Details(){
                                 Save
                             </button>
 
-                          <a href="/change-password"> <div className={classes.btn2}>Change Password</div></a>
+                          <a  className={classes.btn2} href="/change-password"><div className={classes.password}>Change Password</div></a>
 
 
                         </div>

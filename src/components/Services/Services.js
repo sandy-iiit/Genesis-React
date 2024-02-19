@@ -8,15 +8,15 @@ import FAQS from './FAQS'
 
 
 function Services(props) {
-  return (
-    <>
-    <NavBar/>
-   <QueryGenerator/>
-   <WriteQuery/>
-   <FAQS/>
-   <Footer/>
-   </>
-  )
+    return (
+        <>
+            <NavBar/>
+            <QueryGenerator/>
+            <WriteQuery/>
+            <FAQS/>
+            <Footer/>
+        </>
+    )
 }
 
 

@@ -1,24 +1,41 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 .PolicyCard {
     width: 100%;
     height: fit-content;
     position: relative;
     display: flex;
     flex-direction: row;
+<<<<<<< HEAD
   }
   
   .PolicyCard div video {
+=======
+}
+
+.PolicyCard div video {
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     height: 400px;
     width: 400px;
     position: relative;
     object-fit: cover;
+<<<<<<< HEAD
   }
   
   .disclaimer {
+=======
+}
+
+.disclaimer {
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     background-color: #3e54ac82;
     margin: 14px;
     border-radius: 25px;
     height: fit-content;
     padding: 10px;
+<<<<<<< HEAD
   }
   
   .disclaimer p {
@@ -34,6 +51,23 @@
   }
   
   .explore {
+=======
+}
+
+.disclaimer p {
+    font-size: large;
+    font-weight: 450;
+    color: rgb(255, 255, 255);
+}
+
+.disclaimer h2 {
+    color: #3e54ac;
+    letter-spacing: 1.2px;
+    margin: 5px;
+}
+
+.explore {
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     background-color: #3e54ac;
     color: white;
     border-radius: 25px;
@@ -43,13 +77,20 @@
     margin-left: 2px;
     float: right;
     cursor: pointer;
+<<<<<<< HEAD
   }
   
   .PolicyCard div img {
+=======
+}
+
+.PolicyCard div img {
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     height: 400px;
     width: 400px;
     position: relative;
     object-fit: cover;
+<<<<<<< HEAD
   }
   
   .PolicyCard .disclaimer {
@@ -139,10 +180,102 @@
   width: 400px;
   height: 400px;
   /* Other styles as needed */
+=======
+}
+
+.PolicyCard .disclaimer {
+    width: 100%;
+}
+
+.PolicyCard div video {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+}
+
+/* Media queries for tablet screens */
+@media screen and (max-width: 1024px) {
+    .PolicyCard {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .PolicyCard div video {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    .disclaimer {
+        max-width: none;
+    }
+    .explore {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .PolicyCard {
+        display: flex;
+        flex-direction: column;
+    }
+    .PolicyCard div {
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+    }
+    .disclaimer {
+        order: 2;
+    }
+    .borde {
+        order: 1;
+    }
+    .PolicyCard div {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Media queries for mobile screens */
+@media screen and (max-width: 480px) {
+    .disclaimer h2 {
+        font-size: 24px;
+    }
+    .disclaimer p {
+        font-size: 16px;
+    }
+    .explore {
+        font-size: 14px;
+        padding: 5px 10px;
+    }
+    .PolicyCard {
+        display: flex;
+        flex-direction: column;
+    }
+    .PolicyCard div {
+        justify-content: center;
+        align-items: center;
+        object-fit: cover;
+    }
+    .disclaimer {
+        order: 2;
+    }
+    .borde {
+        order: 1;
+    }
+}
+
+/* Existing CSS classes remain unchanged */
+
+
+/* Add styles for GIF */
+.gif {
+    /* Adjust the positioning of the GIF */
+    width: 400px;
+    height: 400px;
+    /* Other styles as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Apply styles when title is 'PROTECT YOUR CAR' */
 .protectCar .disclaimer {
+<<<<<<< HEAD
   order: 2; /* Move the content to the right */
 }
 
@@ -150,17 +283,32 @@
   order: 1; /* Place the GIF on the left */
   /* Adjust the positioning of the GIF */
   /* Other styles as needed */
+=======
+    order: 2; /* Move the content to the right */
+}
+
+.protectCar .gif {
+    order: 1; /* Place the GIF on the left */
+    /* Adjust the positioning of the GIF */
+    /* Other styles as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Media queries for tablet and mobile screens remain unchanged */
 /* Styles for GIF on the left side */
 .gif.left {
+<<<<<<< HEAD
   float: left; /* Align the GIF to the left */
   margin-right: 20px; /* Adjust the margin as needed */
+=======
+    float: left; /* Align the GIF to the left */
+    margin-right: 20px; /* Adjust the margin as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Styles for content on the right side */
 .disclaimer.right {
+<<<<<<< HEAD
   float: right; /* Align the content to the right */
   /* Add any additional styling for the right side */
 }
@@ -169,10 +317,21 @@
   width: 400px;
   height: 400px;
   /* Other styles as needed */
+=======
+    float: right; /* Align the content to the right */
+    /* Add any additional styling for the right side */
+}
+
+.gif {
+    width: 400px;
+    height: 400px;
+    /* Other styles as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Apply styles when title is 'PROTECT YOUR CAR' */
 .protectCar .disclaimer {
+<<<<<<< HEAD
   order: 1; /* Move the content to the left */
 }
 
@@ -180,18 +339,38 @@
   order: 2; /* Place the GIF on the right */
   /* Adjust the positioning of the GIF */
   /* Other styles as needed */
+=======
+    order: 1; /* Move the content to the left */
+}
+
+.protectCar .gif {
+    order: 2; /* Place the GIF on the right */
+    /* Adjust the positioning of the GIF */
+    /* Other styles as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Media queries for tablet and mobile screens remain unchanged */
 
 /* Styles for GIF on the right side */
 .gif.right {
+<<<<<<< HEAD
   float: right; /* Align the GIF to the right */
   margin-left: 20px; /* Adjust the margin as needed */
+=======
+    float: right; /* Align the GIF to the right */
+    margin-left: 20px; /* Adjust the margin as needed */
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 /* Styles for content on the left side */
 .disclaimer.left {
+<<<<<<< HEAD
   float: left; /* Align the content to the left */
   /* Add any additional styling for the left side */
 }
+=======
+    float: left; /* Align the content to the left */
+    /* Add any additional styling for the left side */
+}
+>>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479

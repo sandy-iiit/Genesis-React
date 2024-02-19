@@ -7,22 +7,25 @@ function Carousel(props){
             <CCarouselItem>
                 <CImage className="d-block w-100 customCarouselImage" src={props.img1} alt="slide 1" />
                 <CCarouselCaption className="d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>HAPPY LIFE</h5>
+                    <p>Insurance is not just a product, it's a promise. A promise that in your time of need, you won't have to
+                        face it alone.</p>
                 </CCarouselCaption>
             </CCarouselItem>
             <CCarouselItem>
-                <CImage className="d-block w-100 customCarouselImage" src={props.img1} alt="slide 2" style={{ height: '50%' }}/>
+                <CImage className="d-block w-100 customCarouselImage" src={props.img2} alt="slide 2" />
                 <CCarouselCaption className="d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>HAPPY LIFE</h5>
+                    <p>Insurance is not just a product, it's a promise. A promise that in your time of need, you won't have to
+                        face it alone.</p>
                 </CCarouselCaption>
             </CCarouselItem>
             <CCarouselItem>
-                <CImage className="d-block w-100 customCarouselImage" src={props.img1} alt="slide 3" style={{ height: '50%' }}/>
+                <CImage className="d-block w-100 customCarouselImage" src={props.img3} alt="slide 3" />
                 <CCarouselCaption className="d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>HAPPY LIFE</h5>
+                    <p>Insurance is not just a product, it's a promise. A promise that in your time of need, you won't have to
+                        face it alone.</p>
                 </CCarouselCaption>
             </CCarouselItem>
         </CCarousel>

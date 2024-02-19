@@ -1,9 +1,11 @@
+
 // PolicyForm.js
 
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './PolicyForm.module.css';
 import NavBar from '../../NavBar';
 import Footer from '../../Footer/Footer';
+import classes from "../../Profile/Details.module.css";
 
 const PolicyForm = () => {
     const [isLifeInsurance, setIsLifeInsurance] = useState(false);
@@ -18,7 +20,7 @@ const PolicyForm = () => {
             <div className={styles.body}>
                 <div className={styles.cardHeader}>
                     <div>
-                    <h1>Insurance Reinvented: Designing Beyond the Norm</h1>
+                        <h1>Insurance Reinvented: Designing Beyond the Norm</h1>
                     </div>
                 </div>
 
@@ -53,7 +55,7 @@ const PolicyForm = () => {
                     </div>
 
                 </div>
-                <form method="post" action="/policies_design" className={styles['form']}>
+                <form  className={styles.formm}>
                     <div className={styles['form-group']}>
                         <label htmlFor="type" className={styles['label']}>Type:</label>
                         <select id="type" name="type" onChange={handleTypeChange} className={styles['select']}>
@@ -103,7 +105,7 @@ const PolicyForm = () => {
                         <textarea id="benefits" name="benefits" className={styles['textarea']}></textarea>
                     </div>
                     <br />
-                    <button type="submit" className={styles['button']}>Submit</button>
+                    <button type="submit" className={styles.butr}>Submit</button>
                 </form>
             </div>
             <Footer />

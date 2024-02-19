@@ -37,7 +37,7 @@ const FAQS = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
     const toggleAccordion = (index) => {
-      setActiveIndex(activeIndex === index ? null : index);
+        setActiveIndex(activeIndex === index ? null : index);
     };
     return (
         <div className={styles.faqs}>

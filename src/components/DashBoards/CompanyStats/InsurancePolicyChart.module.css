@@ -1,25 +1,26 @@
+
 .cardHeader {
-    background-color: #2f3e7a;  
+    background-color: #2f3e7a;
     color: #fff;
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-     width: fit-content;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: fit-content;
     text-align: center;
     position: relative;
     top: 25px;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .cardHeader div h1 {
+}
+
+.cardHeader div h1 {
     margin: 0;
-    font-size: 24px;  
+    font-size: 24px;
     text-align: center;
     z-index: 1;
-     
-  }
+
+}
 .chartContainer {
     display: flex;
     flex-wrap: wrap;
@@ -43,3 +44,4 @@
 .lineChart canvas {
     width: 100% !important;
 }
+
