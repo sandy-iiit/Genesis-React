@@ -56,18 +56,6 @@ const Policies = () => {
         needs and budget. Explore our website to learn more and
         don't hesitate to contact us if you have any questions or concerns. Your health and well-being ar
         e our top priorities."
-<<<<<<< HEAD
-        link="/lifepolicies"
-        isAuthenticated={isAuthenticated}
-      />
-    <Footer/>
-    </>
-    
-  )
-}
-
-export default Policies
-=======
                 link="/lifepolicies"
                 isAuthenticated={isAuthenticated}
             />
@@ -78,4 +66,3 @@ export default Policies
 }
 
 export default Policies
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479

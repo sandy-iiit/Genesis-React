@@ -15,28 +15,12 @@ import Footer from "../components/Footer/Footer";
 import FindAgent from "../components/Home/FindAgent";
 import InsuranceCard from "../components/Home/InsuranceCard";
 import LatestNews from "../components/Home/LatestNews";
-<<<<<<< HEAD
-=======
 import LoadingPage from "../components/LoadingPage";
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 
 
 function Home(){
     const images=[newpic5,newpic6,newpic8,newpic2,newpic3,newpic4]
 
-<<<<<<< HEAD
- return (
-     <>
-     <NavBar/>
-         <Carousel img1={newpic}/>
-         <Offers images={images}/>
-         <FindAgent/>
-         <InsuranceCard/>
-         <LatestNews/>
-         <Footer/>
-     </>
- )
-=======
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -69,7 +53,6 @@ function Home(){
             }
         </>
     )
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 
 }
 

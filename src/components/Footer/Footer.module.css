@@ -7,159 +7,14 @@
     color: white;
     display: block;
     margin-bottom: 0px;
-<<<<<<< HEAD
-  
-  }
-  
-  .bottomFooter a {
-=======
 
 }
 
 .bottomFooter a {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     color: white;
     text-decoration: none;
     margin: 0 10px;
     transition: color 0.3s ease-in-out;
-<<<<<<< HEAD
-  }
-  
-  .bottomFooter a:hover {
-    color: black;
-  }
-  
-  .bottomFooter .active {
-    font-weight: bold;
-  }
-  
-  .colophon {
-    margin-top: 10px;
-    font-size: 12px;
-    color: white;
-  }
-  
-  @media only screen and (max-width: 767px) {
-    .bottomFooter {
-      padding: 20px;
-    }
-  
-    .bottomFooter a {
-      margin: 5px;
-    }
-  }
-  
-  .bottomFooter .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .bottomFooter .footerNavigation {
-    flex-grow: 1;
-  }
-  
-  .bottomFooter .footerNavigation a {
-    margin: 0 10px;
-  }
-  
-  .bottomFooter .footerNavigation a:first-child {
-    margin-left: 0;
-  }
-  
-  .bottomFooter .footerNavigation a:last-child {
-    margin-right: 0;
-  }
-  
-  .bottomFooter .colophon {
-    margin: 0;
-    margin-bottom: 0px;
-  }
-   
-  
-  @media (min-width: 768px) {
-    .siteFooter .widget {
-      margin-bottom: 0;
-    }
-  }
-  
-  .siteFooter address {
-    font-style: normal;
-    margin-bottom: 20px;
-  }
-  
-  
-@media only screen and (max-width: 480px) {
-    .siteFooter .widgetArea {
-      padding: 20px 0;
-    }
-  
-    .siteFooter .widget {
-      margin-bottom: 30px;
-    }
-  }
-  
-  /* Tablets: */
-  @media only screen and (min-width: 481px) and (max-width: 768px) {
-    .siteFooter .widgetArea {
-      padding: 40px 0;
-    }
-  
-    .siteFooter .widget {
-      margin-bottom: 40px;
-    }
-  }
-  
-  /* Computer Screens: */
-  @media only screen and (min-width: 769px) {
-    .siteFooter .widgetArea {
-      padding: 60px 0;
-    }
-  
-    .siteFooter .widget {
-      margin-bottom: 60px;
-    }
-  }
-  
-   
-  .siteFooter {
-    border-top: 1px solid #ccc;
-    padding-top: 50px;
-  }
-  
-  .siteFooter .widgetArea {
-    margin-bottom: 50px;
-  }
-  
-  .siteFooter .widgetArea .widget {
-    font-size: 14px;
-    font-size: 0.875em;
-    margin-bottom: 30px;
-  }
-  
-  .siteFooter .widgetArea .widgetTitle {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  
-  .siteFooter .widgetArea a {
-    color: #768089;
-    text-decoration: none;
-  }
-  
-  .siteFooter .widgetArea ul {
-    list-style-type: none;
-    
-  }
-   
-  .siteFooter .widgetArea ul li a{
-    
-    font-size: 15px;
-    font-size: 0.9375em;
-  }
-  
-  .siteFooter .bottomFooter {
-=======
 }
 
 .bottomFooter a:hover {
@@ -296,21 +151,11 @@
 }
 
 .siteFooter .bottomFooter {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     background-color: #4a4c4e;
     text-align: center;
     padding: 30px 0;
     font-size: 14px;
     font-size: 0.875em;
-<<<<<<< HEAD
-  }
-  
-  .siteFooter .footerNavigation {
-    margin-bottom: 30px;
-  }
-  
-  .siteFooter .footerNavigation a {
-=======
 }
 
 .siteFooter .footerNavigation {
@@ -318,25 +163,10 @@
 }
 
 .siteFooter .footerNavigation a {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     color: white;
     padding: 0 10px;
     border-right: 1px solid white;
     line-height: 20px;
-<<<<<<< HEAD
-    
-  }
-  
-  .siteFooter .footerNavigation a:last-child {
-    border-right: none;
-  }
-  
-  .siteFooter .colophon {
-    color: #898b8d;
-  }
-
-  
-=======
 
 }
 
@@ -348,4 +178,3 @@
     color: #898b8d;
 }
 
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479

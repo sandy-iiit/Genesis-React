@@ -11,29 +11,6 @@ import ViewMyAnswers from "./pages/Admin/ViewMyAnswers";
 import LoginPage from "./pages/LoginPage";
 import AgentDashboard from "./components/DashBoards/AgentDashboard/AgentDashboard";
 import TransportForm from "./pages/Applications/TransportFormApplication/TransportForm";
-<<<<<<< HEAD
-import Policies from './components/Policies/Policies';
-import Services from './components/Services/Services';
-import PolicyForm from './components/DashBoards/DesignPolicy/PolicyForm';
-import InsurancePolicyChart from './components/DashBoards/CompanyStats/InsurancePolicyChart';
-import Announcement from './components/DashBoards/Announcements/Announcement';
-import TrackPolicy from './components/DashBoards/TrackPolicy/TrackPolicy';
-import EmployeeSignupForm from './components/auth/EmployeeSignup';
-import ContactUs from './components/AboutusandContatcus/ContactUs';
-import AboutUs from './components/AboutusandContatcus/AboutUs';
-import MyPolicy from './pages/User/MyPolicy';
-const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <Home />,
-        children: [
-            { path: '/offer', element: <Offers /> }
-        ]
-    },
-    {
-        path: '/profile',
-        element: <Profile />,
-=======
 import HealthForm from "./pages/Applications/HealthFormApplication/HealthForm";
 import LifeForm from "./pages/Applications/LifeFormApplication/LifeForm";
 import UserApplicationList from "./pages/Applications/UserApplicationList";
@@ -59,6 +36,7 @@ import TransportPolicy from "./components/PoliciesCards/TransportPolicy";
 import HealthPolicyPage from "./components/PolicyDetails/HealthPolicyPage";
 import LifePolicyPage from "./components/PolicyDetails/LifePolicyPage";
 import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage";
+import MyPolicy from './pages/User/MyPolicy';
 const router=createBrowserRouter([
     {
         path:'/',
@@ -91,7 +69,6 @@ const router=createBrowserRouter([
     {
     path:'/login',
     element:<LoginPage/>
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     },
     {
         path: '/login',
@@ -122,53 +99,6 @@ const router=createBrowserRouter([
         element: <AnswerQuery />
     },
     {
-<<<<<<< HEAD
-        path: '/viewReviews',
-        element: <ReviewViewer />
-    },
-    {
-        path: '/answeredQueries',
-        element: <ViewMyAnswers />
-    },
-    {
-        path: "/dashBoard",
-        element: <AgentDashboard />
-    },
-    {
-        path: "/transportApplication",
-        element: <TransportForm />
-    },
-    {
-        path: '/designpolicy',
-        element: <PolicyForm />
-    },
-    {
-        path: '/companystats',
-        element: <InsurancePolicyChart />
-    },
-    {
-        path: '/sendemail',
-        element: <Announcement />
-    }, {
-        path: '/tractpolicy',
-        element: <TrackPolicy />
-    },
-    {
-        path: '/employeesignup',
-        element: <EmployeeSignupForm/>
-    },
-    {
-        path: '/contactus',
-        element: <ContactUs/>
-    },
-    {
-        path: '/aboutus',
-        element: <AboutUs/>
-    },
-    {
-        path: '/mypolicies',
-        element: <MyPolicy/>,
-=======
         path:"/transportApplication",
         element:<TransportForm/>
     } ,
@@ -240,7 +170,10 @@ const router=createBrowserRouter([
     {
         path:"/PolicyDetails/transport",
         element:<><NavBar/><TransportPolicyPage/><Footer/></>
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
+    },
+    {
+        path:'/mypolicies',
+        element:<MyPolicy/>
     }
 
 ])

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-// Announcement.jsx
-=======
-
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 
 import React, { useState } from 'react';
 import styles from './Announcement.module.css';

@@ -1,28 +1,8 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 /* Variables or Constants */
 :root {
     --primary-color: #3E54AC;
     --secondary-color: #27ae60;
     --spacing: 20px;
-<<<<<<< HEAD
-  }
-  
-  /* Main container */
-  .fullwidthBlock {
-    background-color: #f9f9f9;
-    padding: var(--spacing) 0;
-  }
-  
-  .container {
-    width: 90%;
-    margin: 0 auto;
-  }
-  
-  .sectionTitle {
-=======
 }
 
 /* Main container */
@@ -37,30 +17,10 @@
 }
 
 .sectionTitle {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     color: var(--primary-color);
     text-align: center;
     font-size: 28px;
     margin-bottom: var(--spacing);
-<<<<<<< HEAD
-  }
-  
-  /* Grid Layout */
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing);
-  }
-  
-  /* Column Sizes */
-  .colMd4 {
-    flex: 0 0 calc(33.33% - var(--spacing));
-    max-width: calc(33.33% - var(--spacing));
-  }
-  
-  /* News Card Styles */
-  .news {
-=======
 }
 
 /* Grid Layout */
@@ -78,22 +38,11 @@
 
 /* News Card Styles */
 .news {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     background-color: #fff;
     border: 1px solid #eee;
     padding: var(--spacing);
     text-align: center;
     transition: transform 0.3s ease;
-<<<<<<< HEAD
-  }
-  
-  .news:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .news img {
-=======
 }
 
 .news:hover {
@@ -102,29 +51,10 @@
 }
 
 .news img {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     width: 100%;
     height: auto;
     border-radius: 5px;
     margin-bottom: var(--spacing);
-<<<<<<< HEAD
-  }
-  
-  .entryTitle {
-    font-size: 18px;
-    color: var(--primary-color);
-  }
-  
-  .entryTitle a {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
-  
-  .entryTitle a:hover {
-    text-decoration: underline;
-  }
-  
-=======
 }
 
 .entryTitle {
@@ -141,4 +71,3 @@
     text-decoration: underline;
 }
 
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479

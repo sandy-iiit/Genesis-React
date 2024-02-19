@@ -5,8 +5,6 @@
     flex-direction: row;
     border-bottom: 2px solid #ccc;
 }
-<<<<<<< HEAD
-=======
 .text{
     width: 100%;
     padding: 10px;
@@ -23,7 +21,6 @@
     margin-bottom: 10px;
     box-sizing: border-box; /* Ensures padding is included in the width */
 }
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 .querygen div img{
     width: 100%;
     height: auto;
@@ -51,26 +48,15 @@
     display: flex;
     flex-direction:  column;
     position: relative;
-<<<<<<< HEAD
-     left: 25%;
-=======
     left: 25%;
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     justify-content: center;
     border: 2px solid #3E54AC;
     border-radius: 25px;
     padding: 6px;
-<<<<<<< HEAD
-    
-}
- 
-.quoteform input,textarea{
-=======
 
 }
 
 .quoteform .text,.textarea{
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     justify-content: center;
     align-items: center;
     width: 50%;
@@ -86,16 +72,6 @@
     border-bottom: 2px solid #ccc;
     padding-bottom: 2px;
     color: black;
-<<<<<<< HEAD
-   
-}
-.quoteform input:focus,textarea:focus{
-    border-radius: 25px;
-    color: black;
-}
-.quoteform input,textarea ::placeholder {
-     text-align: center;
-=======
 
 }
  .text:focus,.textarea:focus{
@@ -104,7 +80,6 @@
 }
  .text,.textarea ::placeholder {
     text-align: center;
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 
 }
 .quoteform button{
@@ -125,30 +100,17 @@
         flex-direction: column;
     }
     .imaw{
-<<<<<<< HEAD
-        
-         width: max-content;
-         align-items: center;
-         text-align: center;
-         justify-content: center;
-=======
 
         width: max-content;
         align-items: center;
         text-align: center;
         justify-content: center;
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     }
     .querygen{
         align-items: center;
         text-align: center;
         justify-content: center;
     }
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 .writequery{
@@ -170,21 +132,12 @@
 }
 
 .quoteform textarea{
-<<<<<<< HEAD
-margin:auto;
-margin-bottom: 12px;
-border-color: white;
-border-bottom: 2px solid #ccc;
-padding-bottom: -2px;
- 
-=======
     margin:auto;
     margin-bottom: 12px;
     border-color: white;
     border-bottom: 2px solid #ccc;
     padding-bottom: -2px;
 
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 .quoteform textarea ::placeholder{
@@ -201,11 +154,7 @@ padding-bottom: -2px;
     top: -60px;
 }
 .qrygen1 h2{
-<<<<<<< HEAD
-  margin-left: 10px;
-=======
     margin-left: 10px;
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 
 .faqdeesc{
@@ -221,52 +170,6 @@ padding-bottom: -2px;
     margin:2.5px;
     border-radius: 100px;
     align-items: center;
-<<<<<<< HEAD
-  }
-  
-  .fa:hover {
-      opacity: 0.7;
-  }
-  
-  .fa-facebook {
-    background: #1245b2;
-    color: rgb(197, 84, 84);
-    border-color: #1245b2;
-  }
-  
-  .fa-twitter {
-    background: #55ACEE;
-    color: white;
-  }
-  
-  .fa-google {
-    background: #dd4b39;
-    color: white;
-  }
-  
-  .fa-linkedin {
-    background: #007bb5;
-    color: white;
-  }
-  
-  .fa-youtube {
-    background: #bb0000;
-    color: white;
-  }
-  
-  .fa-instagram {
-    background: #125688;
-    color: white;
-  }
- .faqdeesc img{
-  width: 200px;
-  height: 200px;
-  position: relative;
-  left:5%;
-  bottom: -60px;
-    
- }
-=======
 }
 
 .fa:hover {
@@ -311,7 +214,6 @@ padding-bottom: -2px;
     bottom: -60px;
 
 }
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 .faqdeesc h1,p{
     text-align: center;
 }
@@ -320,25 +222,14 @@ padding-bottom: -2px;
     height: auto;
     display: flex;
     flex-direction:  column;
-<<<<<<< HEAD
-   
-=======
-
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     justify-content: center;
     border: 3px solid #3E54AC;
     border-radius: 25px;
     padding: 6px;
     margin: 7px;
-<<<<<<< HEAD
-  
-   
-    
-=======
 
 
 
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 }
 .questr ul{
     list-style: none;
@@ -349,42 +240,20 @@ padding-bottom: -2px;
     display: inline-block;
     margin-right: 0.2rem;
     font-size: larger;
-<<<<<<< HEAD
-  }
- .answ{
-    visibility: hidden;
- }
-=======
 }
 .answ{
     visibility: hidden;
 }
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
 .questr ul li{
     font-size: 20px;
     font-family:  'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 450;
 }
-<<<<<<< HEAD
- .social-icons{
-=======
 .social-icons{
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     justify-content: center;
     align-items: center;
     text-align: center;
     display: flex;
-<<<<<<< HEAD
- }
-
- 
-
- .layout {
-    width: 600px;
-    margin: auto;
-  }
-  .accordion {
-=======
 }
 
 
@@ -394,30 +263,19 @@ padding-bottom: -2px;
     margin: auto;
 }
 .accordion {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
     background:#3e54ac76 ;
     border-radius: 10px;
-<<<<<<< HEAD
-  }
-  .accordion__question p {
-=======
 }
 .accordion__question p {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     margin: 5px;
     padding: 0;
     font-family: Verdana;
     font-size: 20px;
-<<<<<<< HEAD
-  }
-  .accordion__answer p {
-=======
 }
 .accordion__answer p {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     margin: 5px;
     padding: 10px;
     font-size: large;
@@ -425,21 +283,6 @@ padding-bottom: -2px;
     color: rgb(255, 255, 255);
     background: #3e54ac52;
     border-radius: 25px;
-<<<<<<< HEAD
-  }
-  .accordion:hover {
-    cursor: pointer;
-  }
-  .accordion__answer {
-    display: none;
-  }
-  .accordion.active .accordion__answer {
-    display: block;
-  }
-
-  @media only screen and (max-width:800px)
-  {
-=======
 }
 .accordion:hover {
     cursor: pointer;
@@ -453,7 +296,6 @@ padding-bottom: -2px;
 
 @media only screen and (max-width:800px)
 {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
     .writequery{
         display: flex;
         flex-direction: column-reverse;
@@ -474,24 +316,6 @@ padding-bottom: -2px;
     .accordion__question{
         display: flex;
         flex-wrap: nowrap;
-<<<<<<< HEAD
-        
-    }
-    .questr{
-       height: fit-content;
-    }
-      
-     .faqdeesc{
-        display: flex;
-        justify-content: center;
-        object-fit: cover;
-     }
-     .accordion{
-        width: fit-content;
-
-     }
-     .accordion__answer p {
-=======
 
     }
     .questr{
@@ -508,7 +332,6 @@ padding-bottom: -2px;
 
     }
     .accordion__answer p {
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
         margin: 2.5px;
         padding: 5px;
         font-size: medium;
@@ -516,18 +339,6 @@ padding-bottom: -2px;
         color: rgb(255, 255, 255);
         background: #3e54ac52;
         border-radius: 25px;
-<<<<<<< HEAD
-      }
-  }
-
-
-
-  .navstick{
-    position: fixed;
-  }
-
-  
-=======
     }
 }
 
@@ -536,5 +347,3 @@ padding-bottom: -2px;
 .navstick{
     position: fixed;
 }
-
->>>>>>> 53f162f130205c3c9c8f4c5a73bddc3878930479
