@@ -1,0 +1,35 @@
+.user-policy-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .header {
+    background-color: #3E54AE; /* Blue color */
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 20px;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* MyPolicies.css */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Adjust the height as needed */
+}
+
+.loading-icon {
+  fill: #007bff; /* Blue color */
+  width: 50px; /* Adjust the size as needed */
+  height: auto;
+}

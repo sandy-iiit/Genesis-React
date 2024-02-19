@@ -11,7 +11,7 @@ import ViewReviews from "./components/Reviews/ViewReviews";
 import ReviewViewer from "./pages/Admin/ReviewViewer";
 import ViewAnsweredQueries from "./components/Queries/ViewAnsweredQueries";
 import ViewMyAnswers from "./pages/Admin/ViewMyAnswers";
-import LoginPage from "./pages/Auth/LoginPage";
+import LoginPage from "./pages/LoginPage";
 import AgentDashboard from "./components/DashBoards/AgentDashboard/AgentDashboard";
 import TransportApplication from "./components/Applications/TransportApplication/TransportApplication";
 import TransportForm from "./pages/Applications/TransportFormApplication/TransportForm";
@@ -24,6 +24,7 @@ import TrackPolicy from './components/DashBoards/TrackPolicy/TrackPolicy';
 import EmployeeSignupForm from './components/auth/EmployeeSignup';
 import ContactUs from './components/AboutusandContatcus/ContactUs';
 import AboutUs from './components/AboutusandContatcus/AboutUs';
+import MyPolicy from './pages/User/MyPolicy';
 const router = createBrowserRouter([
     {
         path: '/',
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
     {
         path: '/aboutus',
         element: <AboutUs/>
+    },
+    {
+        path: '/mypolicies',
+        element: <MyPolicy/>,
     }
 ])
 

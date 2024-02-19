@@ -1,6 +1,6 @@
-import Footer from "../../components/Assets/Footer/Footer";
-import NavBar from "../../components/NavBar";
-import Login from "./Login";
+import Footer from "../components/Assets/Footer/Footer";
+import NavBar from "../components/NavBar";
+import Login from "./Auth/Login";
 
 function LoginPage(){
     return(
