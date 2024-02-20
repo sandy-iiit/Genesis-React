@@ -31,7 +31,7 @@ function IndividualHealthApplication(){
         policyId: "",
         policyName: "",
         policyType: "",
-        policyTerm: "",
+        term: "",
         amount: "",
         payType: "",
         applier: "",
@@ -58,6 +58,7 @@ function IndividualHealthApplication(){
 
     async function handleSubmit(e) {
         e.preventDefault()
+        console.log("Entered Submit")
         const flag=e.target.flag.value
         const v = flag==="Accept"?"Verified":"Not Verified Yet"
         const b = {
@@ -185,7 +186,7 @@ function IndividualHealthApplication(){
                     <div className={classes.subrow}>
                         <p className={classes.label}>Policy Term</p>
                         <input
-                            value={data.policyTerm}
+                            value={data.term}
                             id="policyTerm"
                             name="policyTerm"
                             className={`${classes.innerRow2} ${classes.input}`}

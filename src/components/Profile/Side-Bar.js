@@ -30,6 +30,11 @@ function SideBar(){
                     <button className={classes.det}>My Applications</button>
                 </NavLink>
             </div>}
+            {(type==="User") && <div className={classes.sideItem}>
+                <a href="/mypolicies">
+                    <button className={classes.det}>Policies</button>
+                </a>
+            </div>}
 
             {(type==="Admin" || type==="Agent") && <div className={classes.sideItem}>
                 <NavLink to={"/answerQueries"}>
@@ -49,7 +54,7 @@ function SideBar(){
             </div>}
             {(type==="Admin" || type==="Agent") &&<div className={classes.sideItem}>
                 <NavLink to="/dashBoard">
-                    <button className={classes.det}> --> More</button>
+                    <button className={classes.det}> -- More</button>
                 </NavLink>
             </div>}
 

@@ -23,6 +23,7 @@ function LifeApplication(){
         formData.append('applier', user.id);
         formData.append('policyTerm', e.target.elements.policyTerm.value);
         formData.append('policyType', "LIFE");
+        formData.append('sex', e.target.elements.sex.value);
 
         formData.append('healthCondition', e.target.elements.healthCondition.value);
         // ... append other form fields

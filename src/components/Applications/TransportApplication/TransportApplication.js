@@ -19,6 +19,7 @@ function TransportApplication(){
         formData.append('regNum', e.target.elements.regNum.value);
         formData.append('company', e.target.elements.company.value);
         formData.append('model', e.target.elements.model.value);
+        formData.append('sex', e.target.elements.sex.value);
         formData.append('vehicleType', e.target.elements.vehicleType.value);
         formData.append('yearOfMfg', e.target.elements.yearOfMfg.value);
         formData.append('enginee', e.target.elements.enginee.value);

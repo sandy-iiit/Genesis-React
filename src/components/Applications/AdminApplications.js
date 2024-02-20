@@ -1,6 +1,7 @@
 import {useSelector} from "react-redux";
 import styles from "./UserApplications.module.css"
 import {useEffect, useState} from "react";
+import _ from 'lodash';
 import axiosConfiguration from "../../config/axiosConfiguration";
 import {useNavigate, useParams} from "react-router-dom";
 function AdminApplications(){
@@ -18,16 +19,16 @@ function AdminApplications(){
             let link="";
 
             try {
-                if(appType==="health"){
+                if(appType==="health" || appType==="Health" || appType==="HEALTH"){
                     link="/health-applications"
                 }
-                else if(appType==="transport"){
+                else if(appType==="transport" || appType==="Transport" || appType==="TRANSPORT"){
                     link="/transport-applications"
                 }
-                else if(appType==="life"){
+                else if(appType==="life" || appType==="Life" || appType==="LIFE"){
                     link="/life-applications"
                 }
-                else if(appType==="agent"){
+                else if(appType==="agent" || appType==="Agent" || appType==="AGENT"){
                     link="/agent-applications"
                 }
                 console.log("Link: "+link)
@@ -75,16 +76,16 @@ function AdminApplications(){
         }
         let link="";
 
-            if(appType==="health"){
+        if(appType==="health" || appType==="Health" || appType==="HEALTH"){
                 link="/search-health-applications"
             }
-            else if(appType==="transport"){
+        else if(appType==="transport" || appType==="Transport" || appType==="TRANSPORT"){
                 link="/search-transport-applications"
             }
-            else if(appType==="life"){
+        else if(appType==="life" || appType==="Life" || appType==="LIFE"){
                 link="/search-life-applications"
             }
-            else if(appType==="agent"){
+        else if(appType==="agent" || appType==="Agent" || appType==="AGENT"){
                 link="/search-agent-applications"
             }
             const res = await axiosConfiguration.post(link,b)
@@ -147,17 +148,17 @@ function AdminApplications(){
                             }
 
 
-                            {item.policyType === 'Health' && (
+                            {_.lowerCase(item.policyType) === 'health' && (
                                 <div className={`${styles.innerItem} ${styles.A}`}>
-                                    <button className={styles.opener} onClick={()=>{openHealth(item._id).then(r => {})}}>Open application</button>
+                                    <button className={styles.opener} onClick={()=>{openHealth(item._id)}}>Open application</button>
                                 </div>
                             )}
-                            {item.policyType === 'LIFE' && (
+                            {_.lowerCase(item.policyType) === 'life' && (
                                 <div className={`${styles.innerItem} ${styles.A}`}>
                                     <button className={styles.opener} onClick={()=>{openLife(item._id)}}>Open application</button>
                                 </div>
                             )}
-                            {item.policyType === 'TRANSPORT' && (
+                            {_.lowerCase(item.policyType) === 'transport' && (
                                 <div className={`${styles.innerItem} ${styles.A}`}>
                                     {/*href={`/transport-applications/${item._id}`}*/}
                                     <button className={styles.opener} onClick={()=>{openTransport(item._id)}}>Open application</button>

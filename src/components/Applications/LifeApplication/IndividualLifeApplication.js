@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import axiosConfiguration from "../../../config/axiosConfiguration";
 
 
-function IndividualHealthApplication(){
+function IndividualLifeApplication(){
 
     const user=useSelector((state)=>state.auth)
     const {id}=useParams()
@@ -31,8 +31,8 @@ function IndividualHealthApplication(){
         policyId: "",
         policyName: "",
         policyType: "",
-        policyTerm: "",
-        amount: "",
+        term: "",
+        coverAmount: "",
         payType: "",
         applier: "",
         verificationStatus: "",
@@ -47,6 +47,7 @@ function IndividualHealthApplication(){
             }
             const res=await axiosConfiguration.post("/life-individual-application",b)
             console.log(res.data)
+            // console.log(res.data)
             console.log(user.type)
             setData({...data,...res.data})
         }
@@ -58,12 +59,14 @@ function IndividualHealthApplication(){
 
     async function handleSubmit(e) {
         e.preventDefault()
+        console.log("Entered submit")
         const flag=e.target.flag.value
         const v = flag==="Accept"?"Verified":"Not Verified Yet"
         const b = {
             appId:id,
             type: data.policyType,
             name: data.policyName,
+            sex:data.sex,
             applier: data.applier,
             amount: data.amount,
             policyId: data.policyId,
@@ -175,7 +178,7 @@ function IndividualHealthApplication(){
                         <input
 
                             className={`${classes.innerRow2} ${classes.input}`}
-                            value={data.amount}
+                            value={data.coverAmount}
                             type="number"
                             id="amount"
                             name="amount"
@@ -185,7 +188,7 @@ function IndividualHealthApplication(){
                     <div className={classes.subrow}>
                         <p className={classes.label}>Policy Term</p>
                         <input
-                            value={data.policyTerm}
+                            value={data.term}
                             id="policyTerm"
                             name="policyTerm"
                             className={`${classes.innerRow2} ${classes.input}`}
@@ -209,4 +212,4 @@ function IndividualHealthApplication(){
     )
 }
 
-export default IndividualHealthApplication
+export default IndividualLifeApplication

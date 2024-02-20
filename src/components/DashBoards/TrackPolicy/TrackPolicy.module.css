@@ -1,0 +1,103 @@
+/* TrackPolicy.module.css */
+
+.mainTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.inputText {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 50%;
+}
+
+.submitButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.userCards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    text-align: justify;
+    margin: auto;
+}
+
+.userCard {
+    flex: 1 1 300px; /* Adjust the width as needed */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.userCard h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.policyList {
+    list-style: none;
+    padding: 0;
+}
+
+.policyList li {
+    margin-bottom: 10px;
+}
+
+.loading {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.userCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    width: 70%;
+}
+
+.userCard {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.userInfo {
+    margin-bottom: 10px;
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.sectionTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.policyList {
+    list-style: none;
+    padding: 0;
+}
+
+.policyItem {
+    margin-bottom: 10px;
+}

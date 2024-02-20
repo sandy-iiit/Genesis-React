@@ -113,7 +113,10 @@ const Login = () => {
                 value="Login"
                 className={`${styles.btn} ${styles.solid}`}
             />
+            <a href="/forgotPassword">Forgot Password?</a>
+
         </form>
+
     ) : (
         <form onSubmit={handleSubmit}  className={styles["sign-up-form"]}>
             <h2 className={styles.title}>Sign up</h2>
