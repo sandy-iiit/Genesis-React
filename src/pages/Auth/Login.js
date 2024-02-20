@@ -36,7 +36,7 @@ const Login = () => {
                     type: isSignIn ? values.type : res.data.type
                 }
                 dispatch(authActions.login(authUser))
-                // Navigate only if the request is successful
+                
                 navigate("/");
             }
         } catch (error) {

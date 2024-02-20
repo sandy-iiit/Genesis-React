@@ -8,7 +8,7 @@ import WriteReview from "./pages/User/WriteReview";
 import AnswerQuery from "./pages/Admin/AnswerQuery";
 import ReviewViewer from "./pages/Admin/ReviewViewer";
 import ViewMyAnswers from "./pages/Admin/ViewMyAnswers";
-import LoginPage from "./pages/LoginPage";
+import LoginPage from "./pages/Auth/LoginPage";
 import AgentDashboard from "./components/DashBoards/AgentDashboard/AgentDashboard";
 import TransportForm from "./pages/Applications/TransportFormApplication/TransportForm";
 import HealthForm from "./pages/Applications/HealthFormApplication/HealthForm";
@@ -71,32 +71,32 @@ const router=createBrowserRouter([
     element:<LoginPage/>
     },
     {
-        path: '/login',
-        element: <LoginPage />
+    path:'/askQuery',
+    element:<AskQuery/>
     },
     {
-        path: '/askQuery',
-        element: <AskQuery />
+        path:'/viewQueries',
+        element:<ViewMyQueries/>
     },
     {
-        path: '/policies',
-        element: <Policies />
+        path:'/dropReview',
+        element:<WriteReview/>
     },
     {
-        path: '/services',
-        element: <Services />
+        path:'/answerQueries',
+        element:<AnswerQuery/>
     },
     {
-        path: '/viewQueries',
-        element: <ViewMyQueries />
+        path:'/viewReviews',
+        element:<ReviewViewer/>
     },
     {
-        path: '/dropReview',
-        element: <WriteReview />
+        path:'/answeredQueries',
+        element:<ViewMyAnswers/>
     },
     {
-        path: '/answerQueries',
-        element: <AnswerQuery />
+        path:"/dashBoard",
+        element:<AgentDashboard/>
     },
     {
         path:"/transportApplication",
@@ -170,11 +170,13 @@ const router=createBrowserRouter([
     {
         path:"/PolicyDetails/transport",
         element:<><NavBar/><TransportPolicyPage/><Footer/></>
-    },
+    }
+    ,
     {
         path:'/mypolicies',
         element:<MyPolicy/>
     }
+
 
 ])
 
