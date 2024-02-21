@@ -1,13 +1,21 @@
 
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './EmployeeSignup.module.css';
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer/Footer";
+import axiosConfiguration from "../../config/axiosConfiguration";
 
 const EmployeeSignupForm = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errors, setErrors] = useState({});
-
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your form submission logic here

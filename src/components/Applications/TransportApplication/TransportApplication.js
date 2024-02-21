@@ -3,7 +3,20 @@ import {useFormik} from "formik";
 import axiosConfiguration from "../../../config/axiosConfiguration";
 import axios from "axios";
 import {useSelector} from "react-redux";
-function TransportApplication(){
+import {useNavigate, useParams} from "react-router-dom";
+import {useEffect, useState} from "react";
+function TransportApplication(props){
+    const {id,name,cover,term}=useParams()
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
+
+    const navigate=useNavigate()
 
     const userId=useSelector((state)=>state.auth.id)
     console.log(userId)
@@ -44,14 +57,20 @@ function TransportApplication(){
 
         try {
             // Make a POST request using Axios
-            const response = await axios.post('http://localhost:4000/transport-form', formData, {
+
+            const response = await axiosConfiguration.post('http://localhost:4000/transport-form', formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                },
-            });
+                }
+            })
+
+
 
             // Handle the response (you can log it or update the UI accordingly)
             console.log(response.data);
+            alert(response.data.msg)
+            navigate("/profile")
+
         } catch (error) {
             // Handle errors
             console.error('Error submitting form:', error);
@@ -140,12 +159,12 @@ function TransportApplication(){
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Id</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" name="policyId"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" value={id} name="policyId"   required />
                 </div>
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Name</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" name="policyName"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" value={name} name="policyName"   required />
                 </div>
 
                 <div className={classes.row2}>
@@ -156,6 +175,7 @@ function TransportApplication(){
                             className={`${classes.innerRow2} ${classes.input}`}
                             type="number"
                             id="amount"
+                            value={cover}
                             name="amount"
                             required
                         />
@@ -163,7 +183,7 @@ function TransportApplication(){
                     <div className={classes.subrow}>
                         <p className={classes.label}>Policy Term</p>
                         <input
-
+                            value={term}
                             id="policyTerm"
                             name="policyTerm"
                             className={`${classes.innerRow2} ${classes.input}`}
@@ -172,10 +192,8 @@ function TransportApplication(){
                     </div>
                 </div>
 
-                {/*<input  value="sandy" id="applier"  style={{ display: 'none' }} required />*/}
-                {/*<input   id="policyType"  style={{ display: 'none' }} required />*/}
-                <button className={classes.button} type="submit">
-                    Submit
+                <button className={classes.button}  type="submit">
+                   Submit
                 </button>
 
             </form>

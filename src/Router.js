@@ -39,7 +39,11 @@ import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage"
 import MyPolicy from "./pages/User/MyPolicy";
 import ChangePassword from "./pages/ChangePassword";
 import ForgotPassword from "./pages/ForgotPassword";
+<<<<<<< HEAD
 import UserList from './components/DashBoards/AdminCards/UserList';
+=======
+import UserList from "./components/DashBoards/AdminCards/UserList";
+>>>>>>> 32c6dc77f7c4470ad15a71ee68a017aaab16726e
 const router=createBrowserRouter([
     {
         path:'/',
@@ -102,7 +106,7 @@ const router=createBrowserRouter([
         element:<AgentDashboard/>
     },
     {
-        path:"/transportApplication",
+        path:"/transportApplication/:name/:id/:cover/:term",
         element:<TransportForm/>
     } ,
     {
@@ -110,7 +114,7 @@ const router=createBrowserRouter([
         element:<HealthForm/>
     },
     {
-        path:"/lifeApplication",
+        path:"/lifeApplication/:name/:id/:cover/:term",
         element:<LifeForm/>
     },
     {
@@ -167,11 +171,11 @@ const router=createBrowserRouter([
 
     },
     {
-        path:"/PolicyDetails/life",
+        path:"/PolicyDetails/life/:id",
         element:<><NavBar/><LifePolicyPage/><Footer/></>
     },
     {
-        path:"/PolicyDetails/transport",
+        path:"/PolicyDetails/transport/:id",
         element:<><NavBar/><TransportPolicyPage/><Footer/></>
     },
     {
@@ -189,6 +193,10 @@ const router=createBrowserRouter([
             <ForgotPassword/>
 <Footer/>
         </>
+    },
+    {
+        path:'/userpolicies',
+        element: <><UserList/><Footer/></>
     }
     ,
     {
