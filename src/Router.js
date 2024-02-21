@@ -39,11 +39,7 @@ import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage"
 import MyPolicy from "./pages/User/MyPolicy";
 import ChangePassword from "./pages/ChangePassword";
 import ForgotPassword from "./pages/ForgotPassword";
-<<<<<<< HEAD
-import UserList from './components/DashBoards/AdminCards/UserList';
-=======
 import UserList from "./components/DashBoards/AdminCards/UserList";
->>>>>>> 32c6dc77f7c4470ad15a71ee68a017aaab16726e
 const router=createBrowserRouter([
     {
         path:'/',

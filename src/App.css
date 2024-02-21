@@ -10,22 +10,6 @@
     font-size: 16px; /* Set font size */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow for depth */
     margin-bottom: 16px; /* Add margin between toast notifications */
-<<<<<<< HEAD
-  }
-  
-  /* Customize the appearance of the close button */
-  .Toastify__close-button {
-    color: #3E54AE; /* Set close button color */
-  }
-  
-  /* Customize the appearance of the toast body */
-  .Toastify__toast-body {
-    margin-right: 8px; /* Add margin to separate the close button */
-    font-size: larger;
-    font-weight: 400;
-  }
-  
-=======
 }
 
 /* Customize the appearance of the close button */
@@ -39,4 +23,3 @@
     font-size: larger;
     font-weight: 400;
 }
->>>>>>> 32c6dc77f7c4470ad15a71ee68a017aaab16726e
