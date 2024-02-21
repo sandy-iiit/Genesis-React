@@ -1,0 +1,26 @@
+/* Add this CSS to your existing App.css file or create a new CSS file */
+
+/* Customize the appearance of the individual toast notifications */
+.Toastify__toast {
+    border: 5px solid #3E54AE; /* Add a blue border around each toast notification */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    background-color: #fff; /* Set background color */
+    color: #333; /* Set text color */
+    padding: 16px; /* Add padding */
+    font-size: 16px; /* Set font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow for depth */
+    margin-bottom: 16px; /* Add margin between toast notifications */
+  }
+  
+  /* Customize the appearance of the close button */
+  .Toastify__close-button {
+    color: #3E54AE; /* Set close button color */
+  }
+  
+  /* Customize the appearance of the toast body */
+  .Toastify__toast-body {
+    margin-right: 8px; /* Add margin to separate the close button */
+    font-size: larger;
+    font-weight: 400;
+  }
+  

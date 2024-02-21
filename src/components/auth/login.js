@@ -5,6 +5,7 @@ import registerlogo from "../../assets/images/register.svg";
 import companylogo from "../../assets/images/okoklogo-transformed.ico"
 import NavBar from "../NavBar";
 import Footer from "../Assets/Footer/Footer";
+import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
 
@@ -94,7 +95,7 @@ const Login = () => {
   return (
     <>
       <NavBar />
-
+      <ToastContainer />
       <div className={`${containerClass} ${styles.container}`}>
         <div className={styles["forms-container"]}>
           <div className={`${styles["signin-signup"]} ${containerClass}`}>

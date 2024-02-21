@@ -16,7 +16,7 @@ const TrackPolicy = () => {
 
         try {
             setIsLoading(true);
-            const response = await axiosConfiguration.post('policy_details', { email: email });
+            const response = await axiosConfiguration.post('/policy_details', { email: email });
             console.log(response.data)
             const userData = response.data
             setUsers(userData);

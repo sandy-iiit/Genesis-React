@@ -5,7 +5,7 @@ import MyPolicies from "../../components/Services/MyPolicies";
 function MyPolicy(){
     return(
         <>
-        <NavBar/>
+      
         <MyPolicies/>
         </>
     )

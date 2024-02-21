@@ -70,7 +70,7 @@ const AgentDashboard = () => {
             type: 'Admin',
             iconSrc: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRR6fXxIIt-3PRmJounn8Q7XuaxXbMRoLANEtyKiqUR8pqWMVv7',
             title: 'View Users List',
-            link: '/usersList',
+            link: '/userpolicies',
         },
         {
             type: 'Admin',

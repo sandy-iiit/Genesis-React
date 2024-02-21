@@ -21,7 +21,6 @@ const InsurancePolicyChart = () => {
             const res = await axiosConfiguration.get('/data');
             const data = res.data;
 
-             
             setChartData({
                 barChartData: {
                     labels: ['Total Users', 'Transport Policy', 'Life Policy', 'Health Policy'],
@@ -59,7 +58,7 @@ const InsurancePolicyChart = () => {
                             fill: false,
                             borderColor: '#3E54AC',
                             borderWidth: 2,
-                            data: [50, 75, 100, 200, 150, 300, 250]  
+                            data: [50, 75, 100, 200, 150, 300, 250]
                         }
                     ]
                 }
@@ -79,11 +78,11 @@ const InsurancePolicyChart = () => {
                 maintainAspectRatio: false
                 // Add other chart options as needed
             };
-    
+
             const ctx = chartRef.current;
             const pieCtx = pieChartRef.current;
             const lineCtx = lineChartRef.current;
-    
+
             // Destroy existing Chart instances if they exist
             if (ctx.chart) {
                 ctx.chart.destroy();
@@ -94,7 +93,6 @@ const InsurancePolicyChart = () => {
             if (lineCtx.chart) {
                 lineCtx.chart.destroy();
             }
-    
             // Create Bar Chart
             if (ctx) {
                 ctx.chart = new Chart(ctx, {
@@ -103,7 +101,6 @@ const InsurancePolicyChart = () => {
                     options: chartOptions
                 });
             }
-    
             // Create Pie Chart
             if (pieCtx) {
                 pieCtx.chart = new Chart(pieCtx, {
@@ -112,7 +109,6 @@ const InsurancePolicyChart = () => {
                     options: chartOptions
                 });
             }
-    
             // Create Line Chart
             if (lineCtx) {
                 lineCtx.chart = new Chart(lineCtx, {
@@ -126,7 +122,6 @@ const InsurancePolicyChart = () => {
     return (
         <>
             <NavBar />
-            
             <div className={styles.cardHeader}>
                 <div>
                     <h1>Insurance Policies Overview</h1>
@@ -134,48 +129,48 @@ const InsurancePolicyChart = () => {
             </div>
             <div className={styles.chartContainer}>
                 {isLoading ? (
-                   <div className={`${styles.loading} ${styles.center}`}>
-                         
-                         <svg
-  class="loading-icon"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 100 100"
-  width="50"
-  height="50"
->
-  <circle
-    cx="50"
-    cy="50"
-    r="45"
-    fill="none"
-    stroke="#007bff"
-    stroke-width="5"
-    stroke-dasharray="200"
-    stroke-dashoffset="0"
-    transform="rotate(90 50 50)"
-  >
-    <animateTransform
-      attributeName="transform"
-      attributeType="XML"
-      type="rotate"
-      from="0 50 50"
-      to="360 50 50"
-      dur="1.5s"
-      repeatCount="indefinite"
-    />
-    <animate
-      attributeName="stroke-dashoffset"
-      values="0; 628.32"
-      dur="2s"
-      repeatCount="indefinite"
-    />
-  </circle>
-</svg>
+                    <div className={`${styles.loading} ${styles.center}`}>
+
+                        <svg
+                            class="loading-icon"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 100 100"
+                            width="50"
+                            height="50"
+                        >
+                            <circle
+                                cx="50"
+                                cy="50"
+                                r="45"
+                                fill="none"
+                                stroke="#007bff"
+                                stroke-width="5"
+                                stroke-dasharray="200"
+                                stroke-dashoffset="0"
+                                transform="rotate(90 50 50)"
+                            >
+                                <animateTransform
+                                    attributeName="transform"
+                                    attributeType="XML"
+                                    type="rotate"
+                                    from="0 50 50"
+                                    to="360 50 50"
+                                    dur="1.5s"
+                                    repeatCount="indefinite"
+                                />
+                                <animate
+                                    attributeName="stroke-dashoffset"
+                                    values="0; 628.32"
+                                    dur="2s"
+                                    repeatCount="indefinite"
+                                />
+                            </circle>
+                        </svg>
 
                     </div>
                 ) : (
                     <>
-                    
+
                         <div className={`${styles.chart} ${styles.barChart}`}>
                             <canvas ref={chartRef}></canvas>
                         </div>
@@ -185,7 +180,6 @@ const InsurancePolicyChart = () => {
                         <div className={`${styles.chart} ${styles.lineChart}`}>
                             <canvas ref={lineChartRef}></canvas>
                         </div>
-                    
                     </>
                 )}
             </div>

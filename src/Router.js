@@ -36,7 +36,10 @@ import TransportPolicy from "./components/PoliciesCards/TransportPolicy";
 import HealthPolicyPage from "./components/PolicyDetails/HealthPolicyPage";
 import LifePolicyPage from "./components/PolicyDetails/LifePolicyPage";
 import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage";
-import MyPolicy from './pages/User/MyPolicy';
+import MyPolicy from "./pages/User/MyPolicy";
+import ChangePassword from "./pages/ChangePassword";
+import ForgotPassword from "./pages/ForgotPassword";
+import UserList from './components/DashBoards/AdminCards/UserList';
 const router=createBrowserRouter([
     {
         path:'/',
@@ -170,11 +173,31 @@ const router=createBrowserRouter([
     {
         path:"/PolicyDetails/transport",
         element:<><NavBar/><TransportPolicyPage/><Footer/></>
+    },
+    {
+        path:'/mypolicies',
+        element:<MyPolicy/>
+    },
+    {
+        path:"/changePassword",
+        element:<><NavBar/><ChangePassword/><Footer/></>
+    },
+    {
+        path:"/forgotPassword",
+        element:<>
+        <NavBar/>
+            <ForgotPassword/>
+<Footer/>
+        </>
     }
     ,
     {
         path:'/mypolicies',
-        element:<MyPolicy/>
+        element:<> <MyPolicy/> <Footer/></>
+    },
+    {
+        path:'/userpolicies',
+        element: <><UserList/><Footer/></>
     }
 
 
