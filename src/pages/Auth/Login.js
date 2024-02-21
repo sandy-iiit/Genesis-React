@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./Login.module.css";
 import logoimage from "../../assets/images/log.svg";
 import registerlogo from "../../assets/images/register.svg";
@@ -8,22 +8,42 @@ import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {authActions} from "../../store/authSlice";
 // import companylogo from "../../assets/images/okoklogo-transformed.ico"
+import {  toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
     const [isSignIn, setIsSignIn] = useState(true);
     const navigate = useNavigate();
     const dispatch=useDispatch();
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
     async function onSubmit(values, actions) {
         console.log(values);
         try {
+            // Display a loading toast while the authentication request is being processed
+            toast.loading("Signing in...", { autoClose: 8000 }); // Disable auto-close for the loading toast
+
+            // Make the authentication request
             const res = isSignIn ? await axiosConfiguration.post("/login", values)
                 : await axiosConfiguration.post("/signup", values);
+
             console.log(res.data);
+            toast.dismiss();
             if (res.data.msg) {
-                alert(res.data.msg)
-                // navigate('/')
+
+                // If the authentication fails (e.g., incorrect credentials), display a warning toast
+                toast.warning("Incorrect Credentials", { autoClose: 9000 }); // Close after 4 seconds
+                // Reset the form fields if needed
+                actions.resetForm();
             } else {
 
+                // If the authentication is successful, construct the authenticated user object
                 const authUser = {
                     name: res.data.name,
                     email: res.data.email,
@@ -34,16 +54,28 @@ const Login = () => {
                     phone: res.data.phone,
                     id: res.data._id,
                     type: isSignIn ? values.type : res.data.type
-                }
-                dispatch(authActions.login(authUser))
-                // Navigate only if the request is successful
-                navigate("/");
+                };
+
+                // Dispatch the action to log in the user
+                dispatch(authActions.login(authUser));
+
+                // Display a success toast and dismiss the loading toast
+
+                // Navigate to the desired page
+                setTimeout(() => {
+                    navigate("/");
+                }, 4000);
+                toast.success("Welcome back, " + authUser.name + "!", { autoClose: 5000 }); // Close after 6 seconds
             }
         } catch (error) {
+            // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
+            toast.error("An error occurred! Please try again later.", { autoClose: 9000 }); // Close after 6 seconds
             console.error('Error submitting form:', error);
             // Handle error, show error message, etc.
+        } finally {
+            // Hide the loading toast when the authentication process is complete
+            // Dismiss the loading toast
         }
-
     }
 
 

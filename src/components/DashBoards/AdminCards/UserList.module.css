@@ -1,0 +1,52 @@
+.header {
+    background-color: #3E54AC;
+    padding: 10px;
+    color: #ffffff;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.userCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.userCard {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    overflow: hidden; /* Prevents content overflow */
+}
+
+.userCard:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.userCard h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.userCard p {
+    margin: 5px 0;
+}
+
+.userCard button {
+    background-color: #3b55bb;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: block; /* Ensures the button is treated as a block element */
+    margin: auto; /* Centers the button horizontally */
+}
+
+.userCard button:hover {
+    background-color: #395add;
+}

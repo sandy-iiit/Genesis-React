@@ -3,6 +3,8 @@ import './App.css';
 // import router from "./Router";
 import {RouterProvider} from "react-router-dom";
 import router from "./Router";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import the CSS for the ToastContainer
 import {useEffect} from "react";
 import axiosConfiguration from "./config/axiosConfiguration";
 import {authActions} from "./store/authSlice";
@@ -51,7 +53,10 @@ function App() {
 
   })
 
-  return <RouterProvider router={router} />;
+  return <>
+    <ToastContainer position="bottom-center" /> {/* Set position to bottom center */}
+    <RouterProvider router={router} />
+  </>
 }
 
 export default App;

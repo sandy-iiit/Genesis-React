@@ -39,6 +39,7 @@ import TransportPolicyPage from "./components/PolicyDetails/TransportPolicyPage"
 import MyPolicy from "./pages/User/MyPolicy";
 import ChangePassword from "./pages/ChangePassword";
 import ForgotPassword from "./pages/ForgotPassword";
+import UserList from "./components/DashBoards/AdminCards/UserList";
 const router=createBrowserRouter([
     {
         path:'/',
@@ -188,6 +189,10 @@ const router=createBrowserRouter([
             <ForgotPassword/>
 <Footer/>
         </>
+    },
+    {
+        path:'/userpolicies',
+        element: <><UserList/><Footer/></>
     }
 
 ])
