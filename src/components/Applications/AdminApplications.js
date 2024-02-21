@@ -90,6 +90,7 @@ function AdminApplications(){
             }
             const res = await axiosConfiguration.post(link,b)
             setApps(res.data)
+        console.log(res.data)
     }
 
     return(
@@ -129,7 +130,7 @@ function AdminApplications(){
                             </div>}
                             <br />
                             {appType!=="agent" && <div className={`${styles.innerItem} ${styles.Q}`}>
-                                {item.verificationStatus === 'verified' ? (
+                                {_.lowerCase(item.verificationStatus) === 'verified'  ? (
                                     <div>Status: Verified</div>
                                 ) : (
                                     <div>Status: Not Verified Yet</div>

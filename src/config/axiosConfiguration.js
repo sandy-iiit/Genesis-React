@@ -8,5 +8,11 @@ const instance = axios.create({
     },
     withCredentials: true
 });
+export const formDataInstance = axios.create({
+    baseURL: 'http://localhost:4000',
+    headers: {
+        'Content-Type': 'multipart/form-data'
+    }
+});
 
 export default instance;

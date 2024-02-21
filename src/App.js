@@ -7,7 +7,10 @@ import {useEffect} from "react";
 import axiosConfiguration from "./config/axiosConfiguration";
 import {authActions} from "./store/authSlice";
 import {useDispatch, useSelector} from "react-redux";
-
+const getCSRFToken = async () => {
+  const response = await axiosConfiguration.get('/getCSRFToken');
+  axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+};
 function App() {
   const dispatch=useDispatch();
   const usr=useSelector((state)=>state.auth)
@@ -36,11 +39,17 @@ function App() {
   useEffect( () => {
 
     console.log("Session:::")
+    const getCSRFToken = async () => {
+      const response = await axiosConfiguration.get('/getCSRFToken');
+      axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+      // Also set the token in a hidden form field if using forms
+    };
+    getCSRFToken();
     console.log(usr)
     func().then(r => {
       console.log(r)})
 
-  },[])
+  })
 
   return <RouterProvider router={router} />;
 }

@@ -101,7 +101,7 @@ const router=createBrowserRouter([
         element:<AgentDashboard/>
     },
     {
-        path:"/transportApplication",
+        path:"/transportApplication/:name/:id/:cover/:term",
         element:<TransportForm/>
     } ,
     {
@@ -109,7 +109,7 @@ const router=createBrowserRouter([
         element:<HealthForm/>
     },
     {
-        path:"/lifeApplication",
+        path:"/lifeApplication/:name/:id/:cover/:term",
         element:<LifeForm/>
     },
     {
@@ -166,11 +166,11 @@ const router=createBrowserRouter([
 
     },
     {
-        path:"/PolicyDetails/life",
+        path:"/PolicyDetails/life/:id",
         element:<><NavBar/><LifePolicyPage/><Footer/></>
     },
     {
-        path:"/PolicyDetails/transport",
+        path:"/PolicyDetails/transport/:id",
         element:<><NavBar/><TransportPolicyPage/><Footer/></>
     },
     {

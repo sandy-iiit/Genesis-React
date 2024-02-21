@@ -99,9 +99,9 @@ function NavBar() {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                               <NavLink to={page[1]} key={page[0]}> <MenuItem   onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page[0]}</Typography>
+                                </MenuItem></NavLink>
                             ))}
                         </Menu>
                     </Box>

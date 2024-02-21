@@ -2,8 +2,21 @@ import classes from "../TransportApplication/TransportApplication.module.css"
 
 import axios from "axios";
 import {useSelector} from "react-redux";
+import {useNavigate, useParams} from "react-router-dom";
+import axiosConfiguration from "../../../config/axiosConfiguration";
+import {useEffect} from "react";
 function LifeApplication(){
+    const navigate=useNavigate()
 
+    const {id,name,cover,term}=useParams()
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
     const user=useSelector((state)=>state.auth)
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -39,14 +52,16 @@ function LifeApplication(){
 
         try {
             // Make a POST request using Axios
-            const response = await axios.post('http://localhost:4000/life-form', formData, {
+            const response = await axiosConfiguration.post('http://localhost:4000/life-form', formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                },
-            });
+                }
+            })
 
             // Handle the response (you can log it or update the UI accordingly)
             console.log(response.data);
+            alert(response.data.msg)
+            navigate("/profile")
         } catch (error) {
             // Handle errors
             console.error('Error submitting form:', error);
@@ -114,12 +129,12 @@ function LifeApplication(){
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Id</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" name="policyId"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyId" value={id} name="policyId"   required />
                 </div>
 
                 <div className={classes.row1}>
                     <p className={classes.label}>Policy Name</p>
-                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" name="policyName"   required />
+                    <input  className={`${classes.innerRow1} ${classes.input}`} id="policyName" value={name} name="policyName"   required />
                 </div>
 
                 <div className={classes.row2}>
@@ -130,6 +145,7 @@ function LifeApplication(){
                             className={`${classes.innerRow2} ${classes.input}`}
                             type="number"
                             id="amount"
+                            value={cover}
                             name="amount"
                             required
                         />
@@ -140,6 +156,7 @@ function LifeApplication(){
 
                             id="policyTerm"
                             name="policyTerm"
+                            value={term}
                             className={`${classes.innerRow2} ${classes.input}`}
                             required
                         />

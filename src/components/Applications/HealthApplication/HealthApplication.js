@@ -2,12 +2,24 @@ import classes from "../TransportApplication/TransportApplication.module.css"
 
 import axios from "axios";
 import {useSelector} from "react-redux";
+import {useEffect} from "react";
+import axiosConfiguration from "../../../config/axiosConfiguration";
+import {useNavigate} from "react-router-dom";
 function HealthApplication(props){
+    const navigate=useNavigate()
 
     const user=useSelector((state)=>state.auth)
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        console.log("Submit clicked")
         // Create a FormData object to store the form data
         const formData = new FormData();
 
@@ -22,7 +34,6 @@ function HealthApplication(props){
         formData.append('policyName', e.target.elements.policyName.value);
         formData.append('amount', e.target.elements.amount.value);
         formData.append('applier', user.id);
-        formData.append('policyTerm', e.target.elements.policyTerm.value);
         formData.append('healthCondition', e.target.elements.healthCondition.value);
         formData.append('policyType', "HEALTH");
         formData.append('policyTerm', e.target.elements.policyTerm.value);
@@ -40,14 +51,16 @@ function HealthApplication(props){
 
         try {
             // Make a POST request using Axios
-            const response = await axios.post('http://localhost:4000/health-form', formData, {
+            const response = await axiosConfiguration.post('http://localhost:4000/health-form', formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
-                },
-            });
+                }
+            })
 
             // Handle the response (you can log it or update the UI accordingly)
             console.log(response.data);
+            alert(response.data.msg)
+            navigate("/profile")
         } catch (error) {
             // Handle errors
             console.error('Error submitting form:', error);
