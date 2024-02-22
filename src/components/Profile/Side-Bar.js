@@ -5,11 +5,7 @@ function SideBar(){
     const type=useSelector((state)=>state.auth.type)
     return <>
         <div className={classes.sideContainer}>
-            <div className={classes.sideItem}>
-                <a href="/my-details">
-                    <button className={classes.det}>Details</button>
-                </a>
-            </div>
+
             {(type==="User") && <div className={classes.sideItem}>
                 <NavLink to={"/askQuery"}>
                     <button className={classes.det}>Ask Query</button>

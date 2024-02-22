@@ -4,15 +4,20 @@ import styles from './FindAgent.module.css';
 import agentphoto from '../../assets/images/home-offers/findagent_photo.svg'
 import axios from "axios";
 import axiosConfiguration from "../../config/axiosConfiguration";
-const FindAgent = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const b={
-            email:event.target.email.value,
-            name:event.target.name.value
-        }
+import { toast } from 'react-toastify';
+import {useNavigate} from "react-router-dom";
 
-        const res=axiosConfiguration.post("/findanagent",b)
+const FindAgent = () => {
+    const navigate=useNavigate()
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const b = {
+            email: event.target.email.value,
+            name: event.target.name.value
+        }
+        toast.success("Email sent successfully!",{autoClose:2000})
+
+        const res = await axiosConfiguration.post("/findanagent", b)
     };
 
     return (

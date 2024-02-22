@@ -27,11 +27,13 @@ const pages = [
     ['Services','/services'],
     ['Policies','/policies'],
 ]
-const settings = ['Profile', 'Dashboard'];
-const settingsPaths = ['/profile', '/dashboard']; // Add respective paths here
 
 function NavBar() {
     const isLoggedIn=useSelector((state)=>state.auth.isLoggedIn)
+    const type=useSelector((state)=>state.auth.type)
+    const settingsPaths = type==="User"?['/profile']:['/profile', '/dashboard']; // Add respective paths here
+    const settings = type==="User"?['Profile']:['Profile','DashBoard'];
+
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const navigate=useNavigate();

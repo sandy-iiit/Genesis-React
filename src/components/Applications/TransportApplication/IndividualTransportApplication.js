@@ -74,10 +74,11 @@ function IndividualTransportApplication(){
             bname: data.nominee,
             bage: data.nomineeAge,
             brelation: data.nomineeRelation,
+            policyType:"TRANSPORT",
 
             verificationStatus: v
         }
-
+        console.log(b)
         const res = await axiosConfiguration.post("/verifyTransport", b)
         navigate("")
         console.log(res.data)

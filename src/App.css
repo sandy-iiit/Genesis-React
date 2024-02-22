@@ -2,7 +2,6 @@
 
 /* Customize the appearance of the individual toast notifications */
 .Toastify__toast {
-    border: 5px solid #3E54AE; /* Add a blue border around each toast notification */
     border-radius: 8px; /* Add border radius for rounded corners */
     background-color: #fff; /* Set background color */
     color: #333; /* Set text color */
