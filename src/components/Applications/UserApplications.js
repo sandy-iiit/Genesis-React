@@ -2,6 +2,7 @@ import {useSelector} from "react-redux";
 import styles from "./UserApplications.module.css"
 import {useEffect, useState} from "react";
 import axiosConfiguration from "../../config/axiosConfiguration";
+import _ from "lodash"
 import {useNavigate} from "react-router-dom";
 function UserApplications(){
 
@@ -102,7 +103,7 @@ function UserApplications(){
             </div>
             <br />
             <div className={`${styles.innerItem} ${styles.Q}`}>
-        {item.verificationStatus === 'verified' ? (
+        {_.lowerCase(item.verificationStatus) === 'verified' ? (
             <div>Status: Verified</div>
             ) : (
             <div>Status: Not Verified Yet</div>

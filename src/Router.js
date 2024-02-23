@@ -197,7 +197,7 @@ const router=createBrowserRouter([
         </>
     },
     {
-        path:'/userpolicies',
+        path:'/usersList',
         element: <><UserList/><Footer/></>
     }
 
