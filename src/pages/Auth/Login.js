@@ -38,7 +38,6 @@ const Login = () => {
             if (res.data.msg) {
 
                 // If the authentication fails (e.g., incorrect credentials), display a warning toast
-                
                 toast.warning(res.data.msg, { autoClose: 9000 }); // Close after 4 seconds
                 // Reset the form fields if needed
                 actions.resetForm();

@@ -54,7 +54,6 @@ const QueryGenerator = () => {
         } else {
             // Form is valid, submit data
             try {
-                 
                 const response = await axiosConfiguration.post('/generatequote', {
                     name: quotnam,
                     email: quotemail,
@@ -65,12 +64,12 @@ const QueryGenerator = () => {
                 });
                 navigate('/services')
                 console.log('response from server', response.status);
-               
+
                 setErrors({});
-                
+
                 // Reset form 
                 toast.success("Check your email quote was sent");
-               
+
             } catch (error) {
                 console.error('Error generating quote:', error);
                 toast.error("An error occurred!");

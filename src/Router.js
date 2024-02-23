@@ -75,7 +75,10 @@ const router=createBrowserRouter([
     },
     {
     path:'/askQuery',
-    element:<AskQuery/>
+    element:<><AskQuery/>
+
+    <Footer/>
+    </>
     },
     {
         path:'/viewQueries',
@@ -83,7 +86,10 @@ const router=createBrowserRouter([
     },
     {
         path:'/dropReview',
-        element:<WriteReview/>
+        element:<><WriteReview/>
+
+            <Footer/>
+        </>
     },
     {
         path:'/answerQueries',

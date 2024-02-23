@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './EmployeeSignup.module.css';
 import NavBar from "../../components/NavBar";
 import Footer from "../../components/Footer/Footer";
@@ -8,16 +8,22 @@ import { toast } from 'react-toastify';
 const EmployeeSignupForm = () => {
     const [successMessage, setSuccessMessage] = useState('');
     const [errors, setErrors] = useState({});
-
+    useEffect(()=>{
+        const getCSRFToken = async () => {
+            const response = await axiosConfiguration.get('/getCSRFToken');
+            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // Also set the token in a hidden form field if using forms
+        };
+        getCSRFToken();
+    },[])
     const handleSubmit = async (event) => {
         event.preventDefault();
-    
+
         const formData = new FormData(event.target);
         const formObject = {};
         formData.forEach((value, key) => {
             formObject[key] = value;
         });
-    
         try {
             const response = await axiosConfiguration.post('/employeesignupposting', formObject);
             toast.success("Sign Up successful !!");
@@ -30,6 +36,7 @@ const EmployeeSignupForm = () => {
         }
     };
     
+
 
     return (
         <>
@@ -78,7 +85,7 @@ const EmployeeSignupForm = () => {
                     <span id="password-error" className={styles.error}>{errors.password}</span>
 
                     <label htmlFor="dob">Date of Birth:</label>
-                    <input type="date" id="dob" name="dob" poli/>
+                    <input type="date" id="dob" name="dob" />
                     <span id="dob-error" className={styles.error}>{errors.dob}</span>
 
                     <input type="submit" value="Sign Up" className={styles.submitButton} />
