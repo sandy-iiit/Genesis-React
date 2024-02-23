@@ -1,15 +1,10 @@
-import react, { useState } from "react";
-
-import "./contactus.css"
+import React, { useState } from "react";
+import "./contactus.css";
 import ContactAddresscards from "./ContactAddresscards";
 import OnlineWorldImage from './Online world-pana.png';
 import SocialIcons from "./Iconscontactus";
 import NavBar from "../NavBar";
 import Footer from "../Footer/Footer";
-
-
-
-
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +17,7 @@ const ContactUs = () => {
   const [formErrors, setFormErrors] = useState({
     nameError: "",
     emailError: "",
+    messageError: "",
     branchError: ""
   });
 
@@ -34,7 +30,7 @@ const ContactUs = () => {
   };
 
   const validateForm = () => {
-    const { name, email, branch } = formData;
+    const { name, email, message, branch } = formData;
     let valid = true;
 
     const namePattern = /^[A-Za-z\s]+$/;
@@ -55,6 +51,15 @@ const ContactUs = () => {
       valid = false;
     } else {
       setFormErrors({ ...formErrors, emailError: "" });
+    }
+    if (!message.trim()) {
+      setFormErrors({
+        ...formErrors,
+        messageError: "Please enter a message."
+      });
+      valid = false;
+    } else {
+      setFormErrors({ ...formErrors, messageError: "" });
     }
     if (!branchPattern.test(branch)) {
       setFormErrors({
@@ -77,83 +82,75 @@ const ContactUs = () => {
     }
   };
 
-
-    return (
-      <>
+  return (
+    <>
       <NavBar/>
       <div className="background-container">
-       <ContactAddresscards />
-       <div className="image-container">
-       <img src={OnlineWorldImage} alt="Get in touch" className="background-image" />
-     
-     
-       
-        <form onSubmit={handleSubmit} className="centered-form ">
-         
-            
-              <h2 className="get-in-touch">Get In Touch</h2>
-              <br />
-              <br />
-                <input className="name"
-                  type="text"
-                  placeholder="Name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                />
-                <span>{formErrors.nameError}</span>
-                <br />
-                <input className="name"
-                  type="email"
-                  placeholder="Email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                />
-                <span>{formErrors.emailError}</span>
-                <br />
-                <textarea className="message"
-                  rows="2"
-                  cols="40"
-                  placeholder="Enter message here"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                ></textarea>
-                <br />
-                <br />
-                <input className="name"
-                  type="text"
-                  placeholder="Branch"
-                  name="branch"
-                  value={formData.branch}
-                  onChange={handleInputChange}
-                  required
-                />
-                <span>{formErrors.branchError}</span>
-                <br />
-                <button
-                  type="submit"
-                  className="submit"
-                 
-                
-                >
-                  Submit
-                </button>
-                </form>
-              </div>
-           
-         
+        <ContactAddresscards />
+        <div className="image-container">
+          <img src={OnlineWorldImage} alt="Get in touch" className="background-image" />
+          <form onSubmit={handleSubmit} className="centered-form ">
+            <h2 className="get-in-touch">Get In Touch</h2>
+            <br />
+            <br />
+            <input
+              className="name"
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="error-message">{formErrors.nameError}</span>
+            <br />
+            <input
+              className="name"
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="error-message">{formErrors.emailError}</span>
+            <br />
+            <textarea
+              className="message"
+              rows="2"
+              cols="40"
+              placeholder="Enter message here"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              required
+            ></textarea>
+            <span className="error-message">{formErrors.messageError}</span>
+            <br />
+            <input
+              className="name"
+              type="text"
+              placeholder="Branch"
+              name="branch"
+              value={formData.branch}
+              onChange={handleInputChange}
+              required
+            />
+            <span className="error-message">{formErrors.branchError}</span>
+            <br />
+            <button
+              type="submit"
+              className="submit"
+            >
+              Submit
+            </button>
+          </form>
         </div>
-        <SocialIcons />
-      
+      </div>
+      <SocialIcons />
       <Footer/>
-      </>
-    );
-  };
+    </>
+  );
+};
 
-
-  
-  export default ContactUs;
+export default ContactUs;

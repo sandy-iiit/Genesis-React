@@ -30,13 +30,23 @@ h1 {
 
 .form-group input[type="text"],
 .form-group input[type="number"],
-.form-group textarea {
+.form-group textarea
+{
     padding: 10px;
     border-radius: 10px;
 
     width: 100%;
     border:2px solid #3E54AC;
 }
+
+.add-key-details-button{
+    padding: 10px;
+    border-radius: 10px;
+
+    width: 100%;
+    border:2px solid #3E54AC;
+}
+
 .cardHeader {
     background-color: #2f3e7a;
     color: #fff;
@@ -126,4 +136,42 @@ h1 {
 .cardDescription {
     font-size: 16px;
     color: #666;
+}
+
+.benefit-label,
+.benefit-value
+{
+    margin: 10px;
+}
+
+.delete-icon
+{
+    margin-left: 10px;
+    margin-bottom: 10px;
+
+}
+
+.benefit-health-field{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.key-details-container
+{
+    display: flex;
+    margin-bottom: 20px;
+    width:77%;
+}
+.benefit-inputs
+{
+    width: 100%;
+}
+.key-terms-input
+{
+    margin-bottom: 15px;
+    width: 77%;
+}
+.key-terms-container{
+    width: 100%;
+    display: flex;
 }

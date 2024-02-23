@@ -27,7 +27,7 @@ const Login = () => {
         console.log(values);
         try {
             // Display a loading toast while the authentication request is being processed
-            toast.loading("Signing in...", { autoClose: 8000 }); // Disable auto-close for the loading toast
+            toast.loading("Signing in...", { autoClose: 5000 }); // Disable auto-close for the loading toast
 
             // Make the authentication request
             const res = isSignIn ? await axiosConfiguration.post("/login", values)
@@ -38,7 +38,8 @@ const Login = () => {
             if (res.data.msg) {
 
                 // If the authentication fails (e.g., incorrect credentials), display a warning toast
-                toast.warning("Incorrect Credentials", { autoClose: 9000 }); // Close after 4 seconds
+                
+                toast.warning(res.data.msg, { autoClose: 9000 }); // Close after 4 seconds
                 // Reset the form fields if needed
                 actions.resetForm();
             } else {
@@ -64,8 +65,8 @@ const Login = () => {
                 // Navigate to the desired page
                 setTimeout(() => {
                     navigate("/");
-                }, 4000);
-                toast.success("Welcome back, " + authUser.name + "!", { autoClose: 5000 }); // Close after 6 seconds
+                }, 2000);
+                toast.success("Welcome back, " + authUser.name + "!", { autoClose: 3000 }); // Close after 6 seconds
             }
         } catch (error) {
             // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
