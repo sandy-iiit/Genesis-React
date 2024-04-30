@@ -46,7 +46,7 @@ function App() {
   }
   useEffect( () => {
 
-    console.log("Session:::")
+    console.log("Session:::::::::::")
     // const getCSRFToken = async () => {
     //   const response = await axiosConfiguration.get('/getCSRFToken');
     //   axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
