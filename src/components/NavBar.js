@@ -53,6 +53,8 @@ function NavBar() {
     };
 
     async function handleClick() {
+        localStorage.removeItem("token")
+
         await axiosConfiguration.post("/logout")
         navigate('/')
         window.location.reload();
