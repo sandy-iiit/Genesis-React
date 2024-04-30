@@ -7,7 +7,7 @@ import AdminCard from '../AdminCards/AdminCard';
 import Footer from '../Assets/Footer/Footer';
 
 
-const AgentDashboard = ({ name = 'Admin', userType = 'Admin' }) => {
+const AgentDashboard = ({ name = 'Admin', userType = 'Admin' || 'SuperAdmin' }) => {
     // Array to store information for each card
     const cardsData = [
         {
@@ -39,7 +39,7 @@ const AgentDashboard = ({ name = 'Admin', userType = 'Admin' }) => {
             link: '/tractpolicy',
         },
         {
-            type: 'Admin',
+            type: 'Admin'  || 'SuperAdmin',
             iconSrc: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRR6fXxIIt-3PRmJounn8Q7XuaxXbMRoLANEtyKiqUR8pqWMVv7',
             title: 'View Life Applications',
             link: '/life-applications',

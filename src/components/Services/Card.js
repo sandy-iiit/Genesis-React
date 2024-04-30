@@ -12,6 +12,7 @@ const Card = ({ title, type, amount, term, status }) => {
         <p><strong>Amount:</strong> {amount}</p>
         <p><strong>Term:</strong> {term}</p>
         <p><strong>Status:</strong> {status}</p>
+         
       </div>
     </div>
   );

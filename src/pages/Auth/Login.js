@@ -55,7 +55,7 @@ const Login = () => {
                     id: res.data._id,
                     type: isSignIn ? values.type : res.data.type
                 };
-
+                  
                 // Dispatch the action to log in the user
                 dispatch(authActions.login(authUser));
 
@@ -65,7 +65,12 @@ const Login = () => {
                 setTimeout(() => {
                     navigate("/");
                 }, 2000);
+                if(authUser.type === 'SuperAdmin'){
+                    toast.success("Welcome back Administration!", { autoClose: 3000 });
+                }
+                else {
                 toast.success("Welcome back, " + authUser.name + "!", { autoClose: 3000 }); // Close after 6 seconds
+                }
             }
         } catch (error) {
             // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
@@ -112,9 +117,11 @@ const Login = () => {
                 <option value="" disabled>
                     Select a role
                 </option>
+                <option value="SuperAdmin">Administration</option>
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
                 <option value="Agent">Agent</option>
+                
             </select>
             <div className={styles["input-field"]}>
                 <i className={`fas fa-user ${styles.icon}`}></i>

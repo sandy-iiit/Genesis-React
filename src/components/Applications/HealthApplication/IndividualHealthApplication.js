@@ -145,7 +145,7 @@ function IndividualHealthApplication(){
                     </div>
                     <div className={classes.subrow}>
                         <p className={classes.label}>Nominee Relation</p>
-                        <input  className={`${classes.innerRow2} ${classes.input}`} value={data.nomineeRelation} id="nomineeRelation" id="nomineeRelation"  required />
+                        <input  className={`${classes.innerRow2} ${classes.input}`} value={data.nomineeRelation} id="nomineeRelation"  required />
                     </div>
                 </div>
 

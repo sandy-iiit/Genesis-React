@@ -40,6 +40,10 @@ import MyPolicy from "./pages/User/MyPolicy";
 import ChangePassword from "./pages/ChangePassword";
 import ForgotPassword from "./pages/ForgotPassword";
 import UserList from "./components/DashBoards/AdminCards/UserList";
+import EnrollPayment from './components/Payment/EnrollPayment';
+import AdminMange from './components/SuperAdminManagement/AdminManage/AdminMange';
+import AgentManage from './components/SuperAdminManagement/AgentManage/AgentManage';
+import UserMange from './components/SuperAdminManagement/UserManage/UserMange';
 const router=createBrowserRouter([
     {
         path:'/',
@@ -208,7 +212,45 @@ const router=createBrowserRouter([
     {
         path:'/userpolicies',
         element: <><UserList/><Footer/></>
+    },
+    {
+        path: '/payment/:id',
+        element: (
+            <>
+                <NavBar />
+                <EnrollPayment />
+                <Footer />
+            </>
+        )
+    },
+    {
+        path: '/manageadmins',
+        element :<>
+        <NavBar/>
+        <AdminMange/>
+        <Footer/>
+        </>
     }
+    ,
+    {
+        path: '/manageagents',
+        element :<>
+        <NavBar/>
+        <AgentManage/>
+        <Footer/>
+        </>
+    }
+    ,
+    {
+        path: '/manageusers',
+        element :<>
+        <NavBar/>
+        <UserMange/>
+        <Footer/>
+        </>
+    }
+    
+    
 
 
 ])
