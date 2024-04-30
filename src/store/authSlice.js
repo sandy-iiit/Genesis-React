@@ -10,7 +10,8 @@ const authUser={
     address:"",
     phone:"",
     id:"",
-    type:""
+    type:"",
+    cookie:""
 }
 const authSlice=createSlice({
     name:"auth",
@@ -27,6 +28,7 @@ const authSlice=createSlice({
             state.phone=action.payload.phone
             state.id=action.payload.id
             state.type=action.payload.type
+            state.cookie=action.payload.cookie
             console.log(state.type)
 
         },

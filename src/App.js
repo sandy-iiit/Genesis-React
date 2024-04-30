@@ -19,10 +19,15 @@ function App() {
 
 
 
-  async function func(){
-    const res = await axiosConfiguration.get("/check")
+  async function func() {
+    const t=localStorage.getItem("token")
+    console.log("Local storage: "+t)
+    const url = "/check/" + t
+    console.log("Url: "+url)
+    // if (usr.cookie !== "") {
+    const res = await axiosConfiguration.post("/check",{jwtToken:t})
     console.log(res.data);
-    if(!res.data.message) {
+    if (!res.data.message) {
       const authUser = {
         name: res.data.name,
         email: res.data.email,
@@ -37,16 +42,17 @@ function App() {
       console.log(res.data.type)
       dispatch(authActions.login(authUser))
     }
+  // }
   }
   useEffect( () => {
 
     console.log("Session:::")
-    const getCSRFToken = async () => {
-      const response = await axiosConfiguration.get('/getCSRFToken');
-      axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
-      // Also set the token in a hidden form field if using forms
-    };
-    getCSRFToken();
+    // const getCSRFToken = async () => {
+    //   const response = await axiosConfiguration.get('/getCSRFToken');
+    //   axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+    //   // Also set the token in a hidden form field if using forms
+    // };
+    // getCSRFToken();
     console.log(usr)
     func().then(r => {
       console.log(r)})

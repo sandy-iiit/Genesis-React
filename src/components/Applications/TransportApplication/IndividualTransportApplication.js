@@ -92,7 +92,7 @@ function IndividualTransportApplication(){
         axiosConfiguration.post("/files", { fileId: id })
             .then(response => {
                 const fileURL = response.data.fileURL;
-
+                console.log(fileURL);
                 // Open the file URL in a new tab
                 window.open(fileURL, '_blank');
             })

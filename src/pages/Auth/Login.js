@@ -7,6 +7,8 @@ import {useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {authActions} from "../../store/authSlice";
+import Cookies from 'js-cookie';
+
 // import companylogo from "../../assets/images/okoklogo-transformed.ico"
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,14 +17,14 @@ const Login = () => {
     const [isSignIn, setIsSignIn] = useState(true);
     const navigate = useNavigate();
     const dispatch=useDispatch();
-    useEffect(()=>{
-        const getCSRFToken = async () => {
-            const response = await axiosConfiguration.get('/getCSRFToken');
-            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
-            // Also set the token in a hidden form field if using forms
-        };
-        getCSRFToken();
-    },[])
+    // useEffect(()=>{
+    //     const getCSRFToken = async () => {
+    //         const response = await axiosConfiguration.get('/getCSRFToken');
+    //         axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+    //         // Also set the token in a hidden form field if using forms
+    //     };
+    //     getCSRFToken();
+    // },[])
     async function onSubmit(values, actions) {
         console.log(values);
         try {
@@ -33,7 +35,7 @@ const Login = () => {
             const res = isSignIn ? await axiosConfiguration.post("/login", values)
                 : await axiosConfiguration.post("/signup", values);
 
-            console.log(res.data);
+            console.log(res.data.a);
             toast.dismiss();
             if (res.data.msg) {
 
@@ -42,18 +44,22 @@ const Login = () => {
                 // Reset the form fields if needed
                 actions.resetForm();
             } else {
+                // const ipAddress = '52.27.64.157';
+                // Cookies.set('jwtToken', res.data.token, { domain: ipAddress });
+               localStorage.setItem("token",res.data.token)
 
                 // If the authentication is successful, construct the authenticated user object
                 const authUser = {
-                    name: res.data.name,
-                    email: res.data.email,
+                    name: res.data.a.name,
+                    email: res.data.a.email,
                     password: "",
-                    age: res.data.age,
-                    sex: res.data.sex,
-                    address: res.data.address,
-                    phone: res.data.phone,
-                    id: res.data._id,
-                    type: isSignIn ? values.type : res.data.type
+                    age: res.data.a.age,
+                    sex: res.data.a.sex,
+                    address: res.data.a.address,
+                    phone: res.data.a.phone,
+                    id: res.data.a._id,
+                    type: isSignIn ? values.type : res.data.a.type,
+                    cookie:res.data.token
                 };
 
                 // Dispatch the action to log in the user
@@ -64,12 +70,12 @@ const Login = () => {
                 // Navigate to the desired page
                 setTimeout(() => {
                     navigate("/");
-                }, 4000);
-                toast.success("Welcome back, " + authUser.name + "!", { autoClose: 5000 }); // Close after 6 seconds
+                }, 2000);
+                toast.success("Welcome back, " + authUser.name + "!", { autoClose: 3000 }); // Close after 6 seconds
             }
         } catch (error) {
             // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
-            toast.error("An error occurred! Please try again later.", { autoClose: 9000 }); // Close after 6 seconds
+            toast.error("An error occurred! Please try again later.", { autoClose: 3000 }); // Close after 6 seconds
             console.error('Error submitting form:', error);
             // Handle error, show error message, etc.
         } finally {
