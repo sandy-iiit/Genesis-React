@@ -25,7 +25,7 @@ jobs:
     needs: build
     runs-on: self-hosted
     steps:
-      - name: Pull image from docker hub
+      - name: Pull image from your docker hub
         run: docker pull dattasandeep/genesis-frontend1:latest
       - name: Stop old container
         run: docker stop genesis-server
