@@ -12,7 +12,7 @@ function HealthApplication(props){
     useEffect(()=>{
         const getCSRFToken = async () => {
             const response = await axiosConfiguration.get('/getCSRFToken');
-            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
             // Also set the token in a hidden form field if using forms
         };
         getCSRFToken();
@@ -51,7 +51,7 @@ function HealthApplication(props){
 
         try {
             // Make a POST request using Axios
-            const response = await axiosConfiguration.post('http://localhost:4000/health-form', formData,{
+            const response = await axiosConfiguration.post('/health-form', formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }

@@ -11,11 +11,11 @@ function LifeApplication(){
     const {id,name,cover,term}=useParams()
     useEffect(()=>{
         const getCSRFToken = async () => {
-            const response = await axiosConfiguration.get('/getCSRFToken');
-            axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
+            // const response = await axiosConfiguration.get('/getCSRFToken');
+            // axiosConfiguration.defaults.headers.post['X-CSRF-Token'] = response.data.CSRFToken;
             // Also set the token in a hidden form field if using forms
         };
-        getCSRFToken();
+        // getCSRFToken();
     },[])
     const user=useSelector((state)=>state.auth)
     const handleSubmit = async (e) => {
@@ -52,7 +52,7 @@ function LifeApplication(){
 
         try {
             // Make a POST request using Axios
-            const response = await axiosConfiguration.post('http://localhost:4000/life-form', formData,{
+            const response = await axiosConfiguration.post('/life-form', formData,{
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 }

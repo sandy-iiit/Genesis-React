@@ -22,7 +22,7 @@ function AdminManage() {
     const handleDelete = async (id) => {
         try {
             await axiosConfiguration.post('/deleteadmin', { email: id });
-            toast.success("L'administrateur a été supprimé avec succès!");
+            toast.success("Admin deleted Successfully!!!");
             fetchAdmins(); // Fetch admins again to update the list after deleting
         } catch (error) {
             console.error('Error deleting admin:', error);

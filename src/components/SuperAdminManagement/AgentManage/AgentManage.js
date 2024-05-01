@@ -23,7 +23,7 @@ function AgentManage() {
     const handleVerify = async (email) => {
         try {
             await axiosConfiguration.post('/verifyAgent', { email });
-            toast.success("L'agent a été vérifié avec succès!");
+            toast.success("Agent is verified!!!");
             fetchAgents(); // Fetch agents again to update the list after verifying
         } catch (error) {
             console.error('Error verifying agent:', error);
