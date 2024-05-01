@@ -1,4 +1,3 @@
-
 import React from 'react';
 import styles from './LatestNews.module.css';
 import img1 from '../../assets/images/home-offers/featured-image-1@2x.jpg'

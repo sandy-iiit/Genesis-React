@@ -29,7 +29,7 @@ const Login = () => {
         console.log(values);
         try {
             // Display a loading toast while the authentication request is being processed
-            toast.loading("Signing in...", { autoClose: 8000 }); // Disable auto-close for the loading toast
+            toast.loading("Signing in...", { autoClose: 5000 }); // Disable auto-close for the loading toast
 
             // Make the authentication request
             const res = isSignIn ? await axiosConfiguration.post("/login", values)
@@ -61,7 +61,7 @@ const Login = () => {
                     type: isSignIn ? values.type : res.data.a.type,
                     cookie:res.data.token
                 };
-
+                  
                 // Dispatch the action to log in the user
                 dispatch(authActions.login(authUser));
 
@@ -71,7 +71,12 @@ const Login = () => {
                 setTimeout(() => {
                     navigate("/");
                 }, 2000);
+                if(authUser.type === 'SuperAdmin'){
+                    toast.success("Welcome back Administration!", { autoClose: 3000 });
+                }
+                else {
                 toast.success("Welcome back, " + authUser.name + "!", { autoClose: 3000 }); // Close after 6 seconds
+                }
             }
         } catch (error) {
             // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
@@ -118,9 +123,11 @@ const Login = () => {
                 <option value="" disabled>
                     Select a role
                 </option>
+                <option value="SuperAdmin">Administration</option>
                 <option value="User">User</option>
                 <option value="Admin">Admin</option>
                 <option value="Agent">Agent</option>
+                
             </select>
             <div className={styles["input-field"]}>
                 <i className={`fas fa-user ${styles.icon}`}></i>

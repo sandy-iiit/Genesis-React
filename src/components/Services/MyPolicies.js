@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './MyPolicies.css';
-import Card from './Card';
 import axiosConfiguration from "../../config/axiosConfiguration";
 import { useSelector } from "react-redux";
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import NavBar from '../NavBar';
 import Footer from '../Footer/Footer';
+import EnrollPayment from '../../components/Payment/EnrollPayment'; // Import EnrollPayment component
+import Card from './Card';
 
 const MyPolicies = () => {
     const [currentPolicies, setCurrentPolicies] = useState([]);
@@ -15,6 +16,8 @@ const MyPolicies = () => {
     const queryParams = new URLSearchParams(location.search);
     const emailFromQuery = queryParams.get('email');
     const [showNoPoliciesOverlay, setShowNoPoliciesOverlay] = useState(false);
+    const [showPaymentOverlay, setShowPaymentOverlay] = useState(false);
+    const [selectedPolicy, setSelectedPolicy] = useState(null);
 
     useEffect(() => {
         fetchCurrentPolicies();
@@ -22,11 +25,9 @@ const MyPolicies = () => {
 
     const fetchCurrentPolicies = () => {
         const emailToUse = emailFromQuery || user;
-        console.log("Using email:", emailToUse);
 
         axiosConfiguration.post('/getmypolicies', { email: emailToUse })
             .then(response => {
-                console.log(response.data);
                 setCurrentPolicies(response.data.currentPolicies);
                 setIsLoading(false);
                 if (response.data.currentPolicies.length === 0) {
@@ -37,6 +38,11 @@ const MyPolicies = () => {
                 console.error('Error fetching current policies:', error);
                 setIsLoading(false);
             });
+    };
+
+    const handlePaymentClick = (policy) => {
+        setSelectedPolicy(policy);
+        setShowPaymentOverlay(true);
     };
 
     return (
@@ -88,14 +94,17 @@ const MyPolicies = () => {
                         </div>
                     ) : (
                         currentPolicies.map((policy, index) => (
-                            <Card
-                                key={index}
-                                title={policy.name}
-                                type={policy.type}
-                                amount={policy.amount}
-                                term={policy.term}
-                                status={policy.status}
-                            />
+                            <div key={index} className="card-container">
+                                <Card
+                                    title={policy.name}
+                                    type={policy.type}
+                                    amount={policy.amount}
+                                    term={policy.term}
+                                    status={policy.status}
+                                />
+                                  {!emailFromQuery &&
+<button onClick={() => handlePaymentClick(policy)} className="payment-button">Pay for Policy</button> }
+                            </div>
                         ))
                     )}
                 </div>
@@ -105,6 +114,15 @@ const MyPolicies = () => {
                             <span className="close" onClick={() => setShowNoPoliciesOverlay(false)}>&times;</span>
                             <p>No policies yet!</p>
                         </div>
+                    </div>
+                )}
+                {showPaymentOverlay && (
+                    <div className="overlay">
+                        <div className="overlay-content">
+                            <span className="close" onClick={() => setShowPaymentOverlay(false)}>&times;</span>
+                          
+                            <EnrollPayment price={selectedPolicy.amount / 12} policyId={selectedPolicy.id} policyName={selectedPolicy.name} />
+                             </div>
                     </div>
                 )}
             </div>

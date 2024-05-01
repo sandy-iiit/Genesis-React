@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import styles from './Services.module.css';
 import faqimage from '../../../src/assets/images/ServicesPhotos/FAQs-amico.svg'

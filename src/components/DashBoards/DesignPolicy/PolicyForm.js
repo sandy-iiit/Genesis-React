@@ -52,7 +52,6 @@ const PolicyForm = () => {
     );
 
     const handleChange = (field, value) => {
-
         setFormData({ ...formData, [field]: value });
     };
 
@@ -66,7 +65,6 @@ const PolicyForm = () => {
         console.log(e.target.value)
         setFormData({...formData,policytype:e.target.value})
     };
-
 
 
     //PHASE3
@@ -314,6 +312,8 @@ const PolicyForm = () => {
                             <option value="health">Health Insurance</option>
                         </select>
                     </div>
+
+
                     <div className={styles['form-group']}>
                         <label htmlFor="name" className={styles['label']}>Name of Policy:</label>
                         <input type="text" id="name" name="name"
@@ -340,6 +340,13 @@ const PolicyForm = () => {
                                        placeholder="Enter the designated Monthly Premium"
                                        required className={styles['input']} />
                             </div>
+
+                        </>
+                    )                
+                   }
+
+                    {isTransportInsurance && (
+                        <>     
                             <div className={styles['form-group']}>
                                 <label htmlFor="Premium-annual" className={styles['label']}>Annual Premium:</label>
                                 <input type="number" id="premium-annual" name="premium-annual"
@@ -440,7 +447,6 @@ const PolicyForm = () => {
                         <label htmlFor="tc" className={styles['label']}>Terms and Conditions:</label>
                         <textarea id="tc" name="tc" value={formData.TC} onChange={(e)=>handleChange('TC',e.target.value)} required className={styles['textarea']}></textarea>
                     </div>
-
                     {
                         !isHealthInsurance && (
                             <>

@@ -77,7 +77,7 @@ const AgentDashboard = () => {
             type: 'Admin',
             iconSrc: uerlistpic,
             title: 'View Users List',
-            link: '/usersList',
+            link: '/userpolicies',
         },
         {
             type: 'Admin',
@@ -89,7 +89,7 @@ const AgentDashboard = () => {
         {
             type: 'Admin',
             iconSrc: compstatpic,
-            title: 'Company Stats',
+            title: 'Company Stats', 
             description: 'Keep an eye on the Company stats based on insurance.',
             link: '/companyStats',
         },
@@ -100,11 +100,85 @@ const AgentDashboard = () => {
             description: 'Announcement to customers for insurance policy offers.',
             link: '/announcement',
         },
+        {
+            type: 'SuperAdmin',
+            iconSrc: lifeDash,
+            title: 'View Life Applications',
+            link: '/applications/life',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: carpic,
+            title: 'View Motor Applications',
+            link: '/applications/transport',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: healthpic,
+            title: 'View Health Applications',
+            link: '/applications/health',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: agentpic,
+            title: 'View Agent Application',
+            link: '/applications/agent',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: uerlistpic,
+            title: 'View Users List',
+            link: '/userpolicies',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: poldespic,
+            title: 'Policy Designing',
+            description: 'Design and create new insurance policies for customers.',
+            link: '/designPolicy',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: compstatpic,
+            title: 'Company Stats',
+            description: 'Keep an eye on the Company stats based on insurance.',
+            link: '/companyStats',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: annpic,
+            title: 'Announcement',
+            description: 'Announcement to customers for insurance policy offers.',
+            link: '/announcement',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: agentpic,
+            title: 'Manage Admins',
+            description: 'Manage the Admins',
+            link: '/manageadmins',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc:agentpic,
+            title: 'Manage Agents',
+            description: 'Manage the agents',
+            link: '/manageagents',
+        },
+        {
+            type: 'SuperAdmin',
+            iconSrc: agentpic,
+            title: 'Manage Users',
+            description: 'Manage the Users',
+            link: '/manageusers',
+        },
+        
+        
     ];
 
     // Filter cards based on user type
     const filteredCards = cardsData.filter(card => card.type === user.type);
-
+    console.log("user type in dashboard   " + user.type)
     // Render cards dynamically using map
     const renderedCards = filteredCards.map((card, index) => (
         user.type === 'Agent' ? (
@@ -128,7 +202,7 @@ const AgentDashboard = () => {
     return (
         <>
             <NavBar />
-            <h1>Welcome {user.type}</h1>
+            <h1 style={{textAlign:'center'}}>Welcome {user.name}</h1>
             <div className={styles.container}>
                 {renderedCards}
             </div>

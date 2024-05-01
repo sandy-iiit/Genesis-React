@@ -1,35 +1,83 @@
 .user-policy-page {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .header {
-    background-color: #3E54AE; /* Blue color */
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    text-align: center;
-    border-radius: 20px;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  /* MyPolicies.css */
+  padding: 20px;
+  text-align: center;
+}
+
+.header {
+  background-color: #3E54AE; 
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .loading {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust the height as needed */
+  height: 100px;  
 }
 
 .loading-icon {
-  fill: #007bff; /* Blue color */
-  width: 50px; /* Adjust the size as needed */
+  fill: #007bff;  
+  width: 50px;  
   height: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);  
+  z-index: 9999;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.payment-overlay-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3); /* Box shadow for a subtle effect */
+  position: relative;
+  max-width: 400px; /* Adjust the maximum width as needed */
+  text-align: center;
+  padding: 50px;
+  margin: 20px;
+  border-style: solid;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #0e0d0d; /* Close symbol color */
 }

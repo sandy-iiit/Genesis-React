@@ -24,9 +24,10 @@ const EmployeeSignupForm = () => {
         formData.forEach((value, key) => {
             formObject[key] = value;
         });
-
         try {
+            console.log("entered posting of employee")
             const response = await axiosConfiguration.post('/employeesignupposting', formObject);
+             
             toast.success("Sign Up successful !!");
             setSuccessMessage(response.data.message);
             // Clear form fields
@@ -36,6 +37,7 @@ const EmployeeSignupForm = () => {
             setErrors(error.response.data);
         }
     };
+    
 
 
     return (
@@ -46,6 +48,7 @@ const EmployeeSignupForm = () => {
                 <div className={`${styles.successMessage} ${successMessage ? styles.show : ''}`}>
                     {successMessage}
                 </div>
+                 
                 <form id="employee-form" onSubmit={handleSubmit}>
                     <label htmlFor="name">Name:</label>
                     <input type="text" id="name" name="name" required />

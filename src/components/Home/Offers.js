@@ -1,5 +1,5 @@
 import {useSelector} from "react-redux";
-
+import './Offers.module.css'
 const offers=(props)=>{
     // eslint-disable-next-line react-hooks/rules-of-hooks
     // const user=useSelector((state)=>state.auth)
@@ -8,13 +8,13 @@ const offers=(props)=>{
         <>
             <div className="fullwidth-block" data-bg-color="#f1f1f1">
                 <div className="container">
-                    <h2 className="section-title"><b>GENESIS OFFERS</b></h2>
-                    <small className="section-subtitle"><b>Enjoy the Safety and Happiness</b></small>
+                    <h2 className="section-title" style={{textAlign:"center" ,fontFamily:""}}>GENESIS OFFERS</h2>
+                   
                     <div className="row">
                         <div className="col-md-3">
                             <div className="offer caption-top">
                                 <img style={{width:'100%'}} src={props.images[0]} alt="offer 1"/>
-                                    <div style={{width:'100%'}} className={"caption"}>
+                                    <div style={{width:'100%'}} className="caption">
                                         <h3 className="offer-title">Happy Life</h3>
                                         <small>Insurance make you beautiful</small>
                                     </div>

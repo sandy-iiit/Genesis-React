@@ -54,7 +54,6 @@ const QueryGenerator = () => {
         } else {
             // Form is valid, submit data
             try {
-
                 const response = await axiosConfiguration.post('/generatequote', {
                     name: quotnam,
                     email: quotemail,

@@ -21,7 +21,6 @@ const InsurancePolicyChart = () => {
             const res = await axiosConfiguration.get('/data');
             const data = res.data;
 
-
             setChartData({
                 barChartData: {
                     labels: ['Total Users', 'Transport Policy', 'Life Policy', 'Health Policy'],
@@ -94,7 +93,6 @@ const InsurancePolicyChart = () => {
             if (lineCtx.chart) {
                 lineCtx.chart.destroy();
             }
-
             // Create Bar Chart
             if (ctx) {
                 ctx.chart = new Chart(ctx, {
@@ -103,7 +101,6 @@ const InsurancePolicyChart = () => {
                     options: chartOptions
                 });
             }
-
             // Create Pie Chart
             if (pieCtx) {
                 pieCtx.chart = new Chart(pieCtx, {
@@ -112,7 +109,6 @@ const InsurancePolicyChart = () => {
                     options: chartOptions
                 });
             }
-
             // Create Line Chart
             if (lineCtx) {
                 lineCtx.chart = new Chart(lineCtx, {
@@ -126,7 +122,6 @@ const InsurancePolicyChart = () => {
     return (
         <>
             <NavBar />
-
             <div className={styles.cardHeader}>
                 <div>
                     <h1>Insurance Policies Overview</h1>
@@ -185,7 +180,6 @@ const InsurancePolicyChart = () => {
                         <div className={`${styles.chart} ${styles.lineChart}`}>
                             <canvas ref={lineChartRef}></canvas>
                         </div>
-
                     </>
                 )}
             </div>

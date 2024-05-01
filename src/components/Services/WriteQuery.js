@@ -39,7 +39,6 @@ const WriteQuery = () => {
                 toast.success('Thanks for your review', { autoClose: 2000 });
                 console.log('Review submitted successfully');
                 e.target.reset();
-
                 setErrors({});
             } catch (error) {
                 console.error('Error submitting review:', error);

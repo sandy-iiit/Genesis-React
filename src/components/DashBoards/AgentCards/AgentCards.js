@@ -2,8 +2,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './AgentCards.module.css';
+import { useSelector } from 'react-redux';
 
 const AgentCard = ({ iconSrc, title, description, link }) => {
+    const user = useSelector((state) => state.auth)
     return (
         <div className={styles.card}>
             <div className={styles.cardIcon}>

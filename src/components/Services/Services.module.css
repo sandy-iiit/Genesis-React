@@ -111,7 +111,6 @@
         text-align: center;
         justify-content: center;
     }
-
 }
 
 .writequery{
@@ -223,7 +222,6 @@
     height: auto;
     display: flex;
     flex-direction:  column;
-
     justify-content: center;
     border: 3px solid #3E54AC;
     border-radius: 25px;
@@ -349,4 +347,3 @@
 .navstick{
     position: fixed;
 }
-

@@ -1,5 +1,4 @@
 
-
 import React, { useState } from 'react';
 import styles from './Announcement.module.css';
 import NavBar from '../../NavBar';

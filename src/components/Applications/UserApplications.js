@@ -130,8 +130,8 @@ function UserApplications(){
             ))}
             </div>
             </div>
-            );
-        };
+            ;
+        ;
 
 
 

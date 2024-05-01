@@ -1,0 +1,80 @@
+
+
+/* Form styling */
+.signupForm {
+    width: 50%;
+    margin: auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .signupForm h2 {
+    text-align: center;
+    color: #3E54AC;
+  }
+  
+  .signupForm label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .signupForm input[type="text"],
+  .signupForm input[type="email"],
+  .signupForm input[type="password"],
+  .signupForm input[type="date"],
+  .signupForm textarea,
+  .signupForm select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+  
+  .signupForm input[type="submit"] {
+    background-color: #3E54AC;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 20%;
+  }
+  
+  .signupForm input[type="submit"]:hover {
+    background-color: #3E54AC;
+  }
+  
+  .signupForm textarea {
+    height: 100px;
+  }
+  
+  .signupForm select {
+    height: 40px;
+  }
+  
+  /* Error message styling */
+  .error {
+    color: red;
+    margin-top: 5px;
+    display: block;
+  }
+  
+  /* Success message styling */
+  .successMessage {
+    background-color: #3E54AC;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .successMessage.show {
+    display: block;
+  }
+  
