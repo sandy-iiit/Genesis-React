@@ -50,9 +50,9 @@ const EnrollPayment = ({ price, policyId, policyName }) => {
     <div className="enroll-payment-container">
       <h2>Pay for Life Pay for policy</h2>
       <div className="enroll-payment-form">
-        <h3>Policy ID: <span style={{ color: '#06bbcc' }}>{policyId}</span></h3>
-        <h3>Policy Name: <span style={{ color: '#06bbcc' }}>{policyName}</span></h3>
-        <h3>Price: <span style={{ color: 'red' }}>{roundedPrice}</span></h3> {/* Use the rounded price value */}
+        <h3>Policy ID: <span style={{ color: '#3e54ac' }}>{policyId}</span></h3>
+        <h3>Policy Name: <span style={{ color: '#3e54ac' }}>{policyName}</span></h3>
+        <h3>Price: <span style={{ color: 'green' }}>{roundedPrice}</span></h3> {/* Use the rounded price value */}
         <PayPalScriptProvider options={{ clientId: "AX-vMceEk8bWnS2CYWuTkilAtyx4TSiD6-VinlotsfKd0mIiTY_X1Ydy3sqBdVO0U9qvxfeOVlC2B_tm" }}>
           <ButtonWrapper createOrder={createOrder} onApprove={onApprove} showSpinner={showSpinner} onError={handleError} />
         </PayPalScriptProvider>

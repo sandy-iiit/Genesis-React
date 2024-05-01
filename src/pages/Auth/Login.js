@@ -7,6 +7,8 @@ import {useFormik} from "formik";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {authActions} from "../../store/authSlice";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import Cookies from 'js-cookie';
 
 // import companylogo from "../../assets/images/okoklogo-transformed.ico"
@@ -35,7 +37,7 @@ const Login = () => {
             const res = isSignIn ? await axiosConfiguration.post("/login", values)
                 : await axiosConfiguration.post("/signup", values);
 
-            console.log(res.data.a);
+            console.log(res.data);
             toast.dismiss();
             if (res.data.msg) {
 
@@ -80,8 +82,7 @@ const Login = () => {
             }
         } catch (error) {
             // If an error occurs during the authentication process, display an error toast and dismiss the loading toast
-            toast.error("An error occurred! Please try again later.", { autoClose: 3000 }); // Close after 6 seconds
-            console.error('Error submitting form:', error);
+            navigate("/")
             // Handle error, show error message, etc.
         } finally {
             // Hide the loading toast when the authentication process is complete
